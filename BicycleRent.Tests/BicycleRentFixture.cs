@@ -143,103 +143,106 @@ public class BicycleRentFixture
             new()
             {
                 IdRent = 0, Client = Clients[0], Bicycle = Bicycles[0],
-                TimeStart = new TimeOnly(12, 35), TimeEnd = new TimeOnly(14, 35),
+                TimeStart = new TimeOnly(12, 35), TimeEnd = new TimeOnly(14, 35), TimeRent = 0
             },
             new()
             {
                 IdRent = 1, Client = Clients[1], Bicycle = Bicycles[1],
-                TimeStart = new TimeOnly(16, 50), TimeEnd = new TimeOnly(20, 50),
+                TimeStart = new TimeOnly(16, 50), TimeEnd = new TimeOnly(20, 50),TimeRent = 0
             },
             new()
             {
                 IdRent = 2, Client = Clients[1], Bicycle = Bicycles[1],
-                TimeStart = new TimeOnly(9, 0), TimeEnd = new TimeOnly(17, 0),
+                TimeStart = new TimeOnly(9, 0), TimeEnd = new TimeOnly(17, 0), TimeRent = 0
             },
             new()
             {
                 IdRent = 3, Client = Clients[1], Bicycle = Bicycles[10],
-                TimeStart = new TimeOnly(15, 15), TimeEnd = new TimeOnly(18, 15),
+                TimeStart = new TimeOnly(15, 15), TimeEnd = new TimeOnly(18, 15), TimeRent = 0
             },
             new()
             {
                 IdRent = 4, Client = Clients[2], Bicycle = Bicycles[11],
-                TimeStart = new TimeOnly(9, 0), TimeEnd = new TimeOnly(17, 0),
+                TimeStart = new TimeOnly(9, 0), TimeEnd = new TimeOnly(17, 0), TimeRent = 0
             },
             new()
             {
                 IdRent = 5, Client = Clients[3], Bicycle = Bicycles[7],
-                TimeStart = new TimeOnly(17, 30), TimeEnd = new TimeOnly(18, 30),
+                TimeStart = new TimeOnly(17, 30), TimeEnd = new TimeOnly(18, 30), TimeRent = 0
             },
             new()
             {
                 IdRent = 6, Client = Clients[3], Bicycle = Bicycles[8],
-                TimeStart = new TimeOnly(18, 20), TimeEnd = new TimeOnly(20, 20),
+                TimeStart = new TimeOnly(18, 20), TimeEnd = new TimeOnly(20, 20), TimeRent = 0
             },
             new()
             {
                 IdRent = 7, Client = Clients[4], Bicycle = Bicycles[3],
-                TimeStart = new TimeOnly(13, 55), TimeEnd = new TimeOnly(16, 55),
+                TimeStart = new TimeOnly(13, 55), TimeEnd = new TimeOnly(16, 55), TimeRent = 0
             },
             new()
             {
                 IdRent = 8, Client = Clients[5], Bicycle = Bicycles[2],
-                TimeStart = new TimeOnly(7, 45), TimeEnd = new TimeOnly(10, 45),
+                TimeStart = new TimeOnly(7, 45), TimeEnd = new TimeOnly(10, 45), TimeRent = 0
             },
             new()
             {
                 IdRent = 9, Client = Clients[5], Bicycle = Bicycles[7],
-                TimeStart = new TimeOnly(19, 35), TimeEnd = new TimeOnly(20, 35),
+                TimeStart = new TimeOnly(19, 35), TimeEnd = new TimeOnly(20, 35), TimeRent = 0
             },
             new()
             {
                 IdRent = 10, Client = Clients[5], Bicycle = Bicycles[6],
-                TimeStart = new TimeOnly(14, 0), TimeEnd = new TimeOnly(15, 0),
+                TimeStart = new TimeOnly(14, 0), TimeEnd = new TimeOnly(15, 0), TimeRent = 0
             },
             new()
             {
                 IdRent = 11, Client = Clients[5], Bicycle = Bicycles[5],
-                TimeStart = new TimeOnly(13, 40), TimeEnd = new TimeOnly(17, 40),
+                TimeStart = new TimeOnly(13, 40), TimeEnd = new TimeOnly(17, 40), TimeRent = 0
             },
             new()
             {
                 IdRent = 12, Client = Clients[6], Bicycle = Bicycles[2],
-                TimeStart = new TimeOnly(10, 0), TimeEnd = new TimeOnly(11, 0),
+                TimeStart = new TimeOnly(10, 0), TimeEnd = new TimeOnly(11, 0), TimeRent = 0
             },
             new()
             {
                 IdRent = 13, Client = Clients[7], Bicycle = Bicycles[4],
-                TimeStart = new TimeOnly(12, 05), TimeEnd = new TimeOnly(14, 05),
+                TimeStart = new TimeOnly(12, 05), TimeEnd = new TimeOnly(14, 05), TimeRent = 0
             },
             new()
             {
                 IdRent = 14, Client = Clients[7], Bicycle = Bicycles[9],
-                TimeStart = new TimeOnly(12, 0), TimeEnd = new TimeOnly(13, 0),
+                TimeStart = new TimeOnly(12, 0), TimeEnd = new TimeOnly(13, 0), TimeRent = 0
             },
             new()
             {
                 IdRent = 15, Client = Clients[8], Bicycle = Bicycles[6],
-                TimeStart = new TimeOnly(16, 30), TimeEnd = new TimeOnly(18, 30),
+                TimeStart = new TimeOnly(16, 30), TimeEnd = new TimeOnly(18, 30), TimeRent = 0
             },
             new()
             {
                 IdRent = 16, Client = Clients[8], Bicycle = Bicycles[10],
-                TimeStart = new TimeOnly(17, 45), TimeEnd = new TimeOnly(18, 45),
+                TimeStart = new TimeOnly(17, 45), TimeEnd = new TimeOnly(18, 45), TimeRent = 0
             },
             new()
             {
                 IdRent = 17, Client = Clients[8], Bicycle = Bicycles[0],
-                TimeStart = new TimeOnly(10, 0), TimeEnd = new TimeOnly(13, 0),
+                TimeStart = new TimeOnly(10, 0), TimeEnd = new TimeOnly(13, 0), TimeRent = 0
             },
             new()
             {
                 IdRent = 18, Client = Clients[9], Bicycle = Bicycles[11],
-                TimeStart = new TimeOnly(17, 45), TimeEnd = new TimeOnly(18, 45),
+                TimeStart = new TimeOnly(17, 45), TimeEnd = new TimeOnly(18, 45), TimeRent = 0
             },
             new()
             {
                 IdRent = 19, Client = Clients[9], Bicycle = Bicycles[7],
-                TimeStart = new TimeOnly(16, 0), TimeEnd = new TimeOnly(17, 0),
+                TimeStart = new TimeOnly(16, 0), TimeEnd = new TimeOnly(17, 0), TimeRent = 0
             }
         ];
+
+        foreach (var rent in Rents)
+            rent.TimeRent = (rent.TimeEnd - rent.TimeStart).Hours;
     }
 }

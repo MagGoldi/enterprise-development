@@ -11,4 +11,6 @@ public class Rent
     public required TimeOnly TimeStart { get; set; }
 
     public required TimeOnly TimeEnd { get; set; }
+
+    public required int TimeRent { get; set; }
 }
