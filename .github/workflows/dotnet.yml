@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore ./BicycleRent.sln
+      run: dotnet restore ./BicycleRent.Domain/BicycleRent.Tests.csproj
     - name: Build
-      run: dotnet build --no-restore ./BicycleRent.sln
+      run: dotnet build --no-restore ./BicycleRent.Domain/BicycleRent.Tests.csproj
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./BicycleRent.sln
+      run: dotnet test --no-build --verbosity normal ./BicycleRent.Tests.csproj
