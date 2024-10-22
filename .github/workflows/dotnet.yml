@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore ./BicycleRent.Tests/BicycleRent.Tests.csproj
     - name: Test
-      run: dotnet test --no-build --verbosity normal /BicycleRent.Tests/BicycleRent.Tests.csproj
+      run: dotnet test --no-build --verbosity normal ./BicycleRent.Tests/BicycleRent.Tests.csproj
