@@ -22,7 +22,7 @@ public class BicycleRentTest(BicycleRentFixture fixture): IClassFixture<BicycleR
             select bike
         ).ToList();
 
-        Assert.True(result.Count != 0);
+        Assert.True(result.Count == 3);
         Assert.Equal(expected, result);
     }
 
@@ -35,22 +35,22 @@ public class BicycleRentTest(BicycleRentFixture fixture): IClassFixture<BicycleR
     public void TestInfoClientSport()
     {
         var _rents = _fixture.Rents;
-        var _clients = _fixture.Clients;
+        var _renters = _fixture.Renters;
 
-        var expected = new List<Client>
+        var expected = new List<BicycleRenter>
         {
-            _clients[1], _clients[0], _clients[5], _clients[8], _clients[6]
+            _renters[1], _renters[0], _renters[5], _renters[8], _renters[6]
         };
 
         var result =
         (
             from rent in _rents
             where rent.Bicycle.Type.Type == "Mountain"
-            orderby rent.Client.FullName
-            select rent.Client
+            orderby rent.Renter.FullName
+            select rent.Renter
         ).Distinct().ToList();
 
-        Assert.True(result.Count != 0);
+        Assert.True(result.Count == 5);
         Assert.Equal(expected, result);
     }
 
@@ -68,23 +68,21 @@ public class BicycleRentTest(BicycleRentFixture fixture): IClassFixture<BicycleR
         var expected = new[]
         {
             new {Hours = 21, BikeType = "Mountain"},
-            new {Hours = 9, BikeType = "Road"},
+            new {Hours = 14, BikeType = "Sport"},
             new {Hours = 8, BikeType = "Walking"},
-            new {Hours = 14, BikeType = "Sport"}
+            new {Hours = 9, BikeType = "Road"}
         };
 
         var result =
         (
 
             from rent in _rents
-            join bike in _bikes on rent.Bicycle.IdBicycle equals bike.IdBicycle
-            join type in _bikeTypes on bike.Type.IdType equals type.IdType
-            let countHours = _rents.Sum(r => { if (r.Bicycle.Type.Type == type.Type) { return r.TimeRent; } else return 0; })
-            orderby rent.Bicycle.Type.IdType
-            select new { Hours = countHours, BikeType = type.Type }
-        ).Distinct().ToList();
+            group rent by rent.Bicycle.Type into typeRent
+            let sum = typeRent.Sum(r => r.TimeRent)
+            select new { Hours = sum, BikeType = typeRent.Key.Type }
+        ).ToList();
 
-        Assert.True(result.Count != 0);
+        Assert.True(result.Count == 4);
         Assert.Equal(expected, result);
     }
 
@@ -96,23 +94,23 @@ public class BicycleRentTest(BicycleRentFixture fixture): IClassFixture<BicycleR
     public void TestClientsMaxRent()
     {
         var _rents = _fixture.Rents;
-        var _clients = _fixture.Clients;
+        var _renters = _fixture.Renters;
 
-        var expected = new[] { new { CountRent = 4, ClientRent = _clients[5] } };
+        var expected = new[] { new { CountRent = 4, Renter = _renters[5] } };
 
 
         var res =
         (
-            from client in _clients
-            let countRent = _rents.Count(r => client.IdClient == r.Client.IdClient)
+            from renter in _renters
+            let countRent = _rents.Count(r => renter.PK_IdRenter == r.Renter.PK_IdRenter)
             orderby countRent descending
             select
             new
             {
                 CountRent = countRent,
-                ClientRent = client
+                Renter = renter
             }
-        ).Take(5).ToList();
+        ).ToList();
 
         var maxRent = res.Max(r => r.CountRent);
 
@@ -123,7 +121,7 @@ public class BicycleRentTest(BicycleRentFixture fixture): IClassFixture<BicycleR
             select r
         ).ToList();
 
-        Assert.True(result.Count != 0);
+        Assert.True(result.Count == 1);
         Assert.Equal(expected, result);
     }
 
@@ -149,7 +147,7 @@ public class BicycleRentTest(BicycleRentFixture fixture): IClassFixture<BicycleR
         var result =
         (
             from bike in _bikes
-            let countRent = _rents.Count(r => bike.IdBicycle == r.Bicycle.IdBicycle)
+            let countRent = _rents.Count(r => bike.PK_IdBicycle == r.Bicycle.PK_IdBicycle)
             orderby countRent descending
             select
             new
@@ -159,14 +157,14 @@ public class BicycleRentTest(BicycleRentFixture fixture): IClassFixture<BicycleR
             }
         ).Take(5).ToList();
 
-        Assert.True(result.Count != 0);
+        Assert.True(result.Count == 5);
         Assert.Equal(expected, result);
     }
 
 
     /// <summary>
-    /// 6) Вывести информацию о минимальном, максимальном и 
-    /// среднем времени аренды велосипедов.
+    /// 6) ������� ���������� � �����������, ������������ � 
+    /// ������� ������� ������ �����������.
     /// </summary>
     [Fact]
     public void TestStatisticTimeRent()
@@ -185,7 +183,6 @@ public class BicycleRentTest(BicycleRentFixture fixture): IClassFixture<BicycleR
         var maxRentTime = result.Max();
         var avgRentTime = result.Average();
 
-        Assert.True(result.Count != 0);
         for ( var i = 0; i < expected.Count; i++ )
         {
             Assert.Equal(expected[i], result[i], 1e4);
