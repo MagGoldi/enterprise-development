@@ -1,0 +1,518 @@
+[
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "Method": "Get",
+    "RelativePath": "api/Bicycle",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Servicies.Dto.BicycleDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "Method": "Post",
+    "RelativePath": "api/Bicycle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "BicycleRent.Servicies.Dto.BicycleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "Method": "Get",
+    "RelativePath": "api/Bicycle/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BicycleRent.Servicies.Dto.BicycleDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "Method": "Put",
+    "RelativePath": "api/Bicycle/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "value",
+        "Type": "BicycleRent.Servicies.Dto.BicycleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "Method": "Delete",
+    "RelativePath": "api/Bicycle/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "Method": "Get",
+    "RelativePath": "api/BicycleRenter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Servicies.Dto.BicycleRenterDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "Method": "Post",
+    "RelativePath": "api/BicycleRenter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "BicycleRent.Servicies.Dto.BicycleRenterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "Method": "Get",
+    "RelativePath": "api/BicycleRenter/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BicycleRent.Servicies.Dto.BicycleRenterDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "Method": "Put",
+    "RelativePath": "api/BicycleRenter/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "value",
+        "Type": "BicycleRent.Servicies.Dto.BicycleRenterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "Method": "Delete",
+    "RelativePath": "api/BicycleRenter/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "Method": "Get",
+    "RelativePath": "api/BicycleType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Servicies.Dto.BicycleTypeDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "Method": "Post",
+    "RelativePath": "api/BicycleType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "BicycleRent.Servicies.Dto.BicycleTypeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "Method": "Get",
+    "RelativePath": "api/BicycleType/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BicycleRent.Domain.Entities.BicycleType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "Method": "Put",
+    "RelativePath": "api/BicycleType/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "value",
+        "Type": "BicycleRent.Servicies.Dto.BicycleTypeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "Method": "Delete",
+    "RelativePath": "api/BicycleType/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "Method": "GetClientsMaxRent",
+    "RelativePath": "api/JobRequests/GetClientsMaxRent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Domain.JobRequestsTypes.NumberAndEntity\u00602[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[BicycleRent.Servicies.Dto.BicycleRenterDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], BicycleRent.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "Method": "GetInfoClientMountain",
+    "RelativePath": "api/JobRequests/GetInfoClientMountain",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Servicies.Dto.BicycleRenterDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "Method": "GetInfoSportBike",
+    "RelativePath": "api/JobRequests/GetInfoSportBike",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Servicies.Dto.BicycleDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "Method": "GetStatisticTimeRent",
+    "RelativePath": "api/JobRequests/GetStatisticTimeRent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "Method": "GetSumTimeRentForType",
+    "RelativePath": "api/JobRequests/GetSumTimeRentForType",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Domain.JobRequestsTypes.NumberAndEntity\u00602[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[BicycleRent.Servicies.Dto.BicycleTypeDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], BicycleRent.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "Method": "GetTopRentBikes",
+    "RelativePath": "api/JobRequests/GetTopRentBikes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Domain.JobRequestsTypes.NumberAndEntity\u00602[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[BicycleRent.Servicies.Dto.BicycleDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], BicycleRent.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "Method": "Get",
+    "RelativePath": "api/Rent",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BicycleRent.Servicies.Dto.RentDto, BicycleRent.Servicies, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "Method": "Post",
+    "RelativePath": "api/Rent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "BicycleRent.Servicies.Dto.RentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "Method": "Get",
+    "RelativePath": "api/Rent/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BicycleRent.Domain.Entities.Rent",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "Method": "Put",
+    "RelativePath": "api/Rent/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "value",
+        "Type": "BicycleRent.Servicies.Dto.RentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "Method": "Delete",
+    "RelativePath": "api/Rent/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

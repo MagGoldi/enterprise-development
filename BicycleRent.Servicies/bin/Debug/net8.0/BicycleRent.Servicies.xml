@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BicycleRent.Servicies</name>
+    </assembly>
+    <members>
+        <member name="T:BicycleRent.Servicies.BicycleRentMapper">
+            <summary>
+            Класс для преобразования DTO сущности в саму сущности и обратно
+            </summary>
+        </member>
+        <member name="M:BicycleRent.Servicies.BicycleRentMapper.#ctor">
+            <summary>
+            Класс для маппинга данных в DTO и обратно
+            </summary>
+        </member>
+        <member name="T:BicycleRent.Servicies.Dto.BicycleDto">
+            <summary>
+            Класс-DTO для добавления/изменения сущности "Велосипед"
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleDto.BicycleId">
+            <summary>
+            ID велосипеда
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleDto.SerialNumber">
+            <summary>
+            Серийный номер
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleDto.TypeId">
+            <summary>
+            id типа велосипеда
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleDto.Model">
+            <summary>
+            Модель велосипеда
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleDto.Color">
+            <summary>
+            Цвет велосипеда
+            </summary>
+        </member>
+        <member name="T:BicycleRent.Servicies.Dto.BicycleRenterDto">
+            <summary>
+            Класс-DTO для добавления/изменения сущности "Арендатор велосипеда"
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleRenterDto.RenterId">
+            <summary>
+            ID арендатора велосипеда
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleRenterDto.FullName">
+            <summary>
+            ФИО арендатора
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleRenterDto.BirthDate">
+            <summary>
+            Дата рождения
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleRenterDto.PhoneNumber">
+            <summary>
+            Номер телефона
+            </summary>
+        </member>
+        <member name="T:BicycleRent.Servicies.Dto.BicycleTypeDto">
+            <summary>
+            Класс-DTO для добавления/изменения сущности "Тип велосипеда"
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleTypeDto.TypeId">
+            <summary>
+            ID типа велосипеда
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleTypeDto.Type">
+            <summary>
+            Тип велиспеда
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.BicycleTypeDto.Price">
+            <summary>
+            Цена оренды за час
+            </summary>
+        </member>
+        <member name="T:BicycleRent.Servicies.Dto.RentDto">
+            <summary>
+            Класс-DTO для добавления/изменения сущности "Аренда велосипеда"
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.RentDto.RentId">
+            <summary>
+            ID аренды
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.RentDto.RenterId">
+            <summary>
+            id арендатора
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.RentDto.BicycleId">
+            <summary>
+            id велосипеда
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.RentDto.TimeStart">
+            <summary>
+            Время началы аренды
+            </summary>
+        </member>
+        <member name="P:BicycleRent.Servicies.Dto.RentDto.TimeEnd">
+            <summary>
+            Время окончания аренды
+            </summary>
+        </member>
+    </members>
+</doc>

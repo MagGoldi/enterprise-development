@@ -1,0 +1,36 @@
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.deps.json
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.pdb
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.AssemblyInfoInputs.cache
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.AssemblyInfo.cs
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\refint\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.pdb
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\ref\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.AssemblyInfoInputs.cache
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.AssemblyInfo.cs
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\refint\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.pdb
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.deps.json
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.pdb
+C:\Users\Marishka\Desktop\code\Andrew\BicycleRent-2laba-1\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\ref\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.csproj.AssemblyReference.cache
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.AssemblyInfoInputs.cache
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.AssemblyInfo.cs
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\refint\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.pdb
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.deps.json
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.runtimeconfig.json
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.dll
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\bin\Debug\net8.0\BicycleRent.Domain.pdb
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\BicycleRent.Domain.genruntimeconfig.cache
+C:\Users\Marishka\Desktop\code\Andrew\LABA 3\BicycleRent\BicycleRent.Domain\obj\Debug\net8.0\ref\BicycleRent.Domain.dll
