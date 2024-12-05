@@ -13,7 +13,7 @@ namespace BicycleRent.WebApplication.Controllers.DataBase;
 /// <param name="mapper">Маппер</param>
 [Route("api/[controller]")]
 [ApiController]
-public class BicycleTypeControllerDb(IRepositoryDb<BicycleType, int> repository, IMapper mapper) : ControllerBase
+public class BicycleTypeDbController(IRepositoryDb<BicycleType, int> repository, IMapper mapper) : ControllerBase
 {
     /// <summary>
     /// Получить все типы велосипедов

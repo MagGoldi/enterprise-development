@@ -14,7 +14,7 @@ namespace BicycleRent.WebApplication.Controllers.DataBase;
 /// <param name="mapper"></param>
 [Route("api/[controller]")]
 [ApiController]
-public class RentControllerDb(IRepositoryDb<Rent, int> repository, IMapper mapper) : ControllerBase
+public class RentDbController(IRepositoryDb<Rent, int> repository, IMapper mapper) : ControllerBase
 {
     /// <summary>
     /// Получить все арендны велосипедов

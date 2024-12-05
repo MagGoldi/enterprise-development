@@ -4,41 +4,41 @@
         <name>BicycleRent.WebApplication</name>
     </assembly>
     <members>
-        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.BicycleControllerDb">
+        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController">
             <summary>
             Класс-контроллер для сущности "Велосипед"
             </summary>
             <param name="repository">Репозиторий сущности "Велосипед"</param>
             <param name="mapper">Маппер</param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleControllerDb.#ctor(BicycleRent.Domain.Interfaces.IRepositoryDb{BicycleRent.Domain.Entities.Bicycle,System.Int32},AutoMapper.IMapper)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController.#ctor(BicycleRent.Domain.Interfaces.IRepositoryDb{BicycleRent.Domain.Entities.Bicycle,System.Int32},AutoMapper.IMapper)">
             <summary>
             Класс-контроллер для сущности "Велосипед"
             </summary>
             <param name="repository">Репозиторий сущности "Велосипед"</param>
             <param name="mapper">Маппер</param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleControllerDb.Get">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController.Get">
             <summary>
             Получить все велосипеды
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleControllerDb.Get(System.Int32)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController.Get(System.Int32)">
             <summary>
             Получить велосипед по id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleControllerDb.Post(BicycleRent.Servicies.Dto.BicycleDto)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController.Post(BicycleRent.Servicies.Dto.BicycleDto)">
             <summary>
             Добавить велосипед
             </summary>
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleControllerDb.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleDto)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleDto)">
             <summary>
             Обновить велосипед по id
             </summary>
@@ -46,48 +46,48 @@
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleControllerDb.Delete(System.Int32)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController.Delete(System.Int32)">
             <summary>
             Удалить велосипед по id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterControllerDb">
+        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController">
             <summary>
             Класс-контроллер для сущности "Арендатор велосипеда"
             </summary>
             <param name="repository"></param>
             <param name="mapper"></param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterControllerDb.#ctor(BicycleRent.Domain.Interfaces.IRepositoryDb{BicycleRent.Domain.Entities.BicycleRenter,System.Int32},AutoMapper.IMapper)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController.#ctor(BicycleRent.Domain.Interfaces.IRepositoryDb{BicycleRent.Domain.Entities.BicycleRenter,System.Int32},AutoMapper.IMapper)">
             <summary>
             Класс-контроллер для сущности "Арендатор велосипеда"
             </summary>
             <param name="repository"></param>
             <param name="mapper"></param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterControllerDb.Get">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController.Get">
             <summary>
             Получить всех арендаторов велосипедов
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterControllerDb.Get(System.Int32)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController.Get(System.Int32)">
             <summary>
             Получить арендатора велосипеда по id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterControllerDb.Post(BicycleRent.Servicies.Dto.BicycleRenterDto)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController.Post(BicycleRent.Servicies.Dto.BicycleRenterDto)">
             <summary>
             Добавить арендатора велосипеда
             </summary>
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterControllerDb.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleRenterDto)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleRenterDto)">
             <summary>
             Обновить арендатора велосипеда по id
             </summary>
@@ -95,48 +95,48 @@
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterControllerDb.Delete(System.Int32)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController.Delete(System.Int32)">
             <summary>
             Удалить арендатора велосипеда по id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeControllerDb">
+        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController">
             <summary>
             Класс-контроллер для сущности "Тип велосипеда"
             </summary>
             <param name="repository">Репозиторий сущности "Тип велосипеда"</param>
             <param name="mapper">Маппер</param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeControllerDb.#ctor(BicycleRent.Domain.Interfaces.IRepositoryDb{BicycleRent.Domain.Entities.BicycleType,System.Int32},AutoMapper.IMapper)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController.#ctor(BicycleRent.Domain.Interfaces.IRepositoryDb{BicycleRent.Domain.Entities.BicycleType,System.Int32},AutoMapper.IMapper)">
             <summary>
             Класс-контроллер для сущности "Тип велосипеда"
             </summary>
             <param name="repository">Репозиторий сущности "Тип велосипеда"</param>
             <param name="mapper">Маппер</param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeControllerDb.Get">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController.Get">
             <summary>
             Получить все типы велосипедов
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeControllerDb.Get(System.Int32)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController.Get(System.Int32)">
             <summary>
             Получить тип велосипеда по id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeControllerDb.Post(BicycleRent.Servicies.Dto.BicycleTypeDto)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController.Post(BicycleRent.Servicies.Dto.BicycleTypeDto)">
             <summary>
             Добавить тип велосипеда
             </summary>
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeControllerDb.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleTypeDto)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleTypeDto)">
             <summary>
             Обновить тип велосипеда по id
             </summary>
@@ -144,100 +144,100 @@
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeControllerDb.Delete(System.Int32)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController.Delete(System.Int32)">
             <summary>
             Удалить тип велосипеда по id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsControllerDb">
+        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController">
             <summary>
             Класс-контроллер для выполнения запросов
             </summary>
             <param name="repository">Репозиторий для запросов</param>
             <param name="mapper">Маппер</param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsControllerDb.#ctor(BicycleRent.Domain.Repositories.Database.JobRequestsRepositoryDb,AutoMapper.IMapper)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController.#ctor(BicycleRent.Domain.Repositories.Database.JobRequestsRepositoryDb,AutoMapper.IMapper)">
             <summary>
             Класс-контроллер для выполнения запросов
             </summary>
             <param name="repository">Репозиторий для запросов</param>
             <param name="mapper">Маппер</param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsControllerDb.GetInfoSportBike">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController.GetInfoSportBike">
             <summary>
             1) Вывести информацию обо всех спортивных велосипедах
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsControllerDb.GetInfoClientMountain">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController.GetInfoClientMountain">
             <summary>
             2) Вывести информацию обо всех клиентах, которые брали в аренду горные велосипеды, 
             упорядочить по ФИО.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsControllerDb.GetSumTimeRentForType">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController.GetSumTimeRentForType">
             <summary>
             3) Вывести суммарное время аренды велосипедов каждого типа.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsControllerDb.GetClientsMaxRent">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController.GetClientsMaxRent">
             <summary>
             4) Вывести информацию о клиентах, бравших велосипеды на прокат больше всего раз.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsControllerDb.GetTopRentBikes">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController.GetTopRentBikes">
             <summary>
             5) Вывести информацию о топ 5 наиболее часто арендуемых велосипедов.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsControllerDb.GetStatisticTimeRent">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController.GetStatisticTimeRent">
             <summary>
             6) Вывести информацию о минимальном, максимальном и 
             среднем времени аренды велосипедов.
             </summary>
             <returns></returns>
         </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.RentControllerDb">
+        <member name="T:BicycleRent.WebApplication.Controllers.DataBase.RentDbController">
             <summary>
             Класс-контроллер для сущности "Аренда велосипеда"
             </summary>
             <param name="repository"></param>
             <param name="mapper"></param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentControllerDb.#ctor(BicycleRent.Domain.Interfaces.IRepositoryDb{BicycleRent.Domain.Entities.Rent,System.Int32},AutoMapper.IMapper)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentDbController.#ctor(BicycleRent.Domain.Interfaces.IRepositoryDb{BicycleRent.Domain.Entities.Rent,System.Int32},AutoMapper.IMapper)">
             <summary>
             Класс-контроллер для сущности "Аренда велосипеда"
             </summary>
             <param name="repository"></param>
             <param name="mapper"></param>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentControllerDb.Get">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentDbController.Get">
             <summary>
             Получить все арендны велосипедов
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentControllerDb.Get(System.Int32)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentDbController.Get(System.Int32)">
             <summary>
             Получить аренду велосипеда по id
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentControllerDb.Post(BicycleRent.Servicies.Dto.RentDto)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentDbController.Post(BicycleRent.Servicies.Dto.RentDto)">
             <summary>
             Добавить аренду велосипеда
             </summary>
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentControllerDb.Put(System.Int32,BicycleRent.Servicies.Dto.RentDto)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentDbController.Put(System.Int32,BicycleRent.Servicies.Dto.RentDto)">
             <summary>
             Обновить аренду велосипеда по id
             </summary>
@@ -245,255 +245,7 @@
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentControllerDb.Delete(System.Int32)">
-            <summary>
-            Удалить аренду велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.List.BicycleController">
-            <summary>
-            Класс-контроллер для сущности "Велосипед"
-            </summary>
-            <param name="repository">Репозиторий сущности "Велосипед"</param>
-            <param name="mapper">Маппер</param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleController.#ctor(BicycleRent.Domain.Interfaces.IRepository{BicycleRent.Domain.Entities.Bicycle,System.Int32},AutoMapper.IMapper)">
-            <summary>
-            Класс-контроллер для сущности "Велосипед"
-            </summary>
-            <param name="repository">Репозиторий сущности "Велосипед"</param>
-            <param name="mapper">Маппер</param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleController.Get">
-            <summary>
-            Получить все велосипеды
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleController.Get(System.Int32)">
-            <summary>
-            Получить велосипед по id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleController.Post(BicycleRent.Servicies.Dto.BicycleDto)">
-            <summary>
-            Добавить велосипед
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleController.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleDto)">
-            <summary>
-            Обновить велосипед по id
-            </summary>
-            <param name="id"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleController.Delete(System.Int32)">
-            <summary>
-            Удалить велосипед по id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.List.BicycleRenterController">
-            <summary>
-            Класс-контроллер для сущности "Арендатор велосипеда"
-            </summary>
-            <param name="repository"></param>
-            <param name="mapper"></param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleRenterController.#ctor(BicycleRent.Domain.Interfaces.IRepository{BicycleRent.Domain.Entities.BicycleRenter,System.Int32},AutoMapper.IMapper)">
-            <summary>
-            Класс-контроллер для сущности "Арендатор велосипеда"
-            </summary>
-            <param name="repository"></param>
-            <param name="mapper"></param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleRenterController.Get">
-            <summary>
-            Получить всех арендаторов велосипедов
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleRenterController.Get(System.Int32)">
-            <summary>
-            Получить арендатора велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleRenterController.Post(BicycleRent.Servicies.Dto.BicycleRenterDto)">
-            <summary>
-            Добавить арендатора велосипеда
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleRenterController.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleRenterDto)">
-            <summary>
-            Обновить арендатора велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleRenterController.Delete(System.Int32)">
-            <summary>
-            Удалить арендатора велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.List.BicycleTypeController">
-            <summary>
-            Класс-контроллер для сущности "Тип велосипеда"
-            </summary>
-            <param name="repository">Репозиторий сущности "Тип велосипеда"</param>
-            <param name="mapper">Маппер</param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleTypeController.#ctor(BicycleRent.Domain.Interfaces.IRepository{BicycleRent.Domain.Entities.BicycleType,System.Int32},AutoMapper.IMapper)">
-            <summary>
-            Класс-контроллер для сущности "Тип велосипеда"
-            </summary>
-            <param name="repository">Репозиторий сущности "Тип велосипеда"</param>
-            <param name="mapper">Маппер</param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleTypeController.Get">
-            <summary>
-            Получить все типы велосипедов
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleTypeController.Get(System.Int32)">
-            <summary>
-            Получить тип велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleTypeController.Post(BicycleRent.Servicies.Dto.BicycleTypeDto)">
-            <summary>
-            Добавить тип велосипеда
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleTypeController.Put(System.Int32,BicycleRent.Servicies.Dto.BicycleTypeDto)">
-            <summary>
-            Обновить тип велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.BicycleTypeController.Delete(System.Int32)">
-            <summary>
-            Удалить тип велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.List.JobRequestsController">
-            <summary>
-            Класс-контроллер для выполнения запросов
-            </summary>
-            <param name="repository">Репозиторий для запросов</param>
-            <param name="mapper">Маппер</param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.JobRequestsController.#ctor(BicycleRent.Domain.Repositories.List.JobRequestsRepository,AutoMapper.IMapper)">
-            <summary>
-            Класс-контроллер для выполнения запросов
-            </summary>
-            <param name="repository">Репозиторий для запросов</param>
-            <param name="mapper">Маппер</param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.JobRequestsController.GetInfoSportBike">
-            <summary>
-            1) Вывести информацию обо всех спортивных велосипедах
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.JobRequestsController.GetInfoClientMountain">
-            <summary>
-            2) Вывести информацию обо всех клиентах, которые брали в аренду горные велосипеды, 
-            упорядочить по ФИО.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.JobRequestsController.GetSumTimeRentForType">
-            <summary>
-            3) Вывести суммарное время аренды велосипедов каждого типа.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.JobRequestsController.GetClientsMaxRent">
-            <summary>
-            4) Вывести информацию о клиентах, бравших велосипеды на прокат больше всего раз.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.JobRequestsController.GetTopRentBikes">
-            <summary>
-            5) Вывести информацию о топ 5 наиболее часто арендуемых велосипедов.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.JobRequestsController.GetStatisticTimeRent">
-            <summary>
-            6) Вывести информацию о минимальном, максимальном и 
-            среднем времени аренды велосипедов.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:BicycleRent.WebApplication.Controllers.List.RentController">
-            <summary>
-            Класс-контроллер для сущности "Аренда велосипеда"
-            </summary>
-            <param name="repository"></param>
-            <param name="mapper"></param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.RentController.#ctor(BicycleRent.Domain.Interfaces.IRepository{BicycleRent.Domain.Entities.Rent,System.Int32},AutoMapper.IMapper)">
-            <summary>
-            Класс-контроллер для сущности "Аренда велосипеда"
-            </summary>
-            <param name="repository"></param>
-            <param name="mapper"></param>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.RentController.Get">
-            <summary>
-            Получить все арендны велосипедов
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.RentController.Get(System.Int32)">
-            <summary>
-            Получить аренду велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.RentController.Post(BicycleRent.Servicies.Dto.RentDto)">
-            <summary>
-            Добавить аренду велосипеда
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.RentController.Put(System.Int32,BicycleRent.Servicies.Dto.RentDto)">
-            <summary>
-            Обновить аренду велосипеда по id
-            </summary>
-            <param name="id"></param>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:BicycleRent.WebApplication.Controllers.List.RentController.Delete(System.Int32)">
+        <member name="M:BicycleRent.WebApplication.Controllers.DataBase.RentDbController.Delete(System.Int32)">
             <summary>
             Удалить аренду велосипеда по id
             </summary>

@@ -25,66 +25,66 @@ public class BicycleRentDataSeeder
             new Bicycle
             {
                 BicycleId = 1, SerialNumber = "M001", Type = BicycleTypes[0],
-                Model = "Navigator 910 MD", Color = "Blue"
+                Model = "Navigator 910 MD", Color = "Blue", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 2, SerialNumber = "M002", Type = BicycleTypes[0],
-                Model = "Forward Apache 29 XD", Color = "Orange"
+                Model = "Forward Apache 29 XD", Color = "Orange", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 3, SerialNumber = "M003", Type = BicycleTypes[0],
-                Model = "Stinger Element Evo 29", Color = "Yellow"
+                Model = "Stinger Element Evo 29", Color = "Yellow", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 4, SerialNumber = "R001", Type = BicycleTypes[1],
-                Model = "Aspect Allroad", Color = "White"
+                Model = "Aspect Allroad", Color = "White", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 5, SerialNumber = "R002", Type = BicycleTypes[1],
-                Model = "Stark Peloton", Color = "Black"
+                Model = "Stark Peloton", Color = "Black", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 6, SerialNumber = "R003", Type = BicycleTypes[1],
-                Model = "Format 5211", Color = "Black-Blue"
+                Model = "Format 5211", Color = "Black-Blue", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 7, SerialNumber = "W001", Type = BicycleTypes[2],
-                Model = "Stark Comfort 3-speed", Color = "Beige"
+                Model = "Stark Comfort 3-speed", Color = "Beige", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 8, SerialNumber = "W002", Type = BicycleTypes[2],
-                Model = "Stels Energy VI", Color = "Gray"
+                Model = "Stels Energy VI", Color = "Gray", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 9, SerialNumber = "W003", Type = BicycleTypes[2],
-                Model = "Stark Comfort 3-speed", Color = "White"
+                Model = "Stark Comfort 3-speed", Color = "White", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 10, SerialNumber = "S001", Type = BicycleTypes[3],
-                Model = "Format 5222 CF", Color = "Orange"
+                Model = "Format 5222 CF", Color = "Orange", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 11, SerialNumber = "S002", Type = BicycleTypes[3],
-                Model = "Bear Bike Perm 2021", Color = "Beige"
+                Model = "Bear Bike Perm 2021", Color = "Beige", TypeId = 0
             },
             new Bicycle
             {
                 BicycleId = 12, SerialNumber = "S003", Type = BicycleTypes[3],
-                Model = "Electra Loft 7D", Color = "Black"
+                Model = "Electra Loft 7D", Color = "Black", TypeId = 0
             }
         ];
 
-        for ( var i = 0; i < Bicycles.Count; i++ )
+        for (var i = 0; i < Bicycles.Count; i++)
         {
             Bicycles[i].TypeId = Bicycles[i].Type.TypeId;
         }
@@ -148,102 +148,102 @@ public class BicycleRentDataSeeder
             new Rent
             {
                 RentId = 1, Renter = Renters[0], Bicycle = Bicycles[0],
-                TimeStart = new DateTime(2024, 5, 12, 12, 35, 0), TimeEnd = new DateTime(2024, 5, 12, 14, 35, 0)
+                TimeStart = new DateTime(2024, 5, 12, 12, 35, 0), TimeEnd = new DateTime(2024, 5, 12, 14, 35, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 2, Renter = Renters[1], Bicycle = Bicycles[1],
-                TimeStart = new DateTime(2024, 6, 1, 16, 50, 0), TimeEnd = new DateTime(2024, 6, 1, 20, 50, 0)
+                TimeStart = new DateTime(2024, 6, 1, 16, 50, 0), TimeEnd = new DateTime(2024, 6, 1, 20, 50, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 3, Renter = Renters[1], Bicycle = Bicycles[1],
-                TimeStart = new DateTime(2024, 6, 5, 9, 0, 0), TimeEnd = new DateTime(2024, 6, 5, 17, 0, 0)
+                TimeStart = new DateTime(2024, 6, 5, 9, 0, 0), TimeEnd = new DateTime(2024, 6, 5, 17, 0, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 4, Renter = Renters[1], Bicycle = Bicycles[10],
-                TimeStart = new DateTime(2024, 7, 10, 15, 15, 0), TimeEnd = new DateTime(2024, 7, 10, 18, 15, 0)
+                TimeStart = new DateTime(2024, 7, 10, 15, 15, 0), TimeEnd = new DateTime(2024, 7, 10, 18, 15, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 5, Renter = Renters[2], Bicycle = Bicycles[11],
-                TimeStart = new DateTime(2024, 9, 10, 9, 0, 0), TimeEnd = new DateTime(2024, 9, 10, 17, 0, 0)
+                TimeStart = new DateTime(2024, 9, 10, 9, 0, 0), TimeEnd = new DateTime(2024, 9, 10, 17, 0, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 6, Renter = Renters[3], Bicycle = Bicycles[7],
-                TimeStart = new DateTime(2024, 8, 18, 17, 30, 0), TimeEnd = new DateTime(2024, 8, 18, 18, 30, 0)
+                TimeStart = new DateTime(2024, 8, 18, 17, 30, 0), TimeEnd = new DateTime(2024, 8, 18, 18, 30, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 7, Renter = Renters[3], Bicycle = Bicycles[8],
-                TimeStart = new DateTime(2024, 7, 1, 18, 20, 0), TimeEnd = new DateTime(2024, 7, 1, 20, 20, 0)
+                TimeStart = new DateTime(2024, 7, 1, 18, 20, 0), TimeEnd = new DateTime(2024, 7, 1, 20, 20, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 8, Renter = Renters[4], Bicycle = Bicycles[3],
-                TimeStart = new DateTime(2024, 4, 29, 13, 55, 0), TimeEnd = new DateTime(2024, 4, 29, 16, 55, 0)
+                TimeStart = new DateTime(2024, 4, 29, 13, 55, 0), TimeEnd = new DateTime(2024, 4, 29, 16, 55, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 9, Renter = Renters[5], Bicycle = Bicycles[2],
-                TimeStart = new DateTime(2024, 4, 29, 7, 45, 0), TimeEnd = new DateTime(2024, 4, 29, 10, 45, 0)
+                TimeStart = new DateTime(2024, 4, 29, 7, 45, 0), TimeEnd = new DateTime(2024, 4, 29, 10, 45, 0), BicycleId = 0, RenterId = 0
             },
             new()
             {
                 RentId = 10, Renter = Renters[5], Bicycle = Bicycles[7],
-                TimeStart = new DateTime(2024, 7, 7, 19, 35, 0), TimeEnd = new DateTime(2024, 7, 7, 20, 35, 0)
+                TimeStart = new DateTime(2024, 7, 7, 19, 35, 0), TimeEnd = new DateTime(2024, 7, 7, 20, 35, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 11, Renter = Renters[5], Bicycle = Bicycles[6],
-                TimeStart = new DateTime(2024, 6, 28, 14, 0, 0), TimeEnd = new DateTime(2024, 6, 28, 15, 0, 0)
+                TimeStart = new DateTime(2024, 6, 28, 14, 0, 0), TimeEnd = new DateTime(2024, 6, 28, 15, 0, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 12, Renter = Renters[5], Bicycle = Bicycles[5],
-                TimeStart = new DateTime(2024, 5, 30, 13, 40, 0), TimeEnd = new DateTime(2024, 5, 30, 17, 40, 0)
+                TimeStart = new DateTime(2024, 5, 30, 13, 40, 0), TimeEnd = new DateTime(2024, 5, 30, 17, 40, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 13, Renter = Renters[6], Bicycle = Bicycles[2],
-                TimeStart = new DateTime(2024, 5, 15, 10, 0, 0), TimeEnd = new DateTime(2024, 5, 15, 11, 0, 0)
+                TimeStart = new DateTime(2024, 5, 15, 10, 0, 0), TimeEnd = new DateTime(2024, 5, 15, 11, 0, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 14, Renter = Renters[7], Bicycle = Bicycles[4],
-                TimeStart = new DateTime(2024, 8, 1, 12, 05, 0), TimeEnd = new DateTime(2024, 8, 1, 14, 05, 0)
+                TimeStart = new DateTime(2024, 8, 1, 12, 05, 0), TimeEnd = new DateTime(2024, 8, 1, 14, 05, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 15, Renter = Renters[7], Bicycle = Bicycles[9],
-                TimeStart = new DateTime(2024, 8, 8, 12, 0, 0), TimeEnd = new DateTime(2024, 8, 8, 13, 0, 0)
+                TimeStart = new DateTime(2024, 8, 8, 12, 0, 0), TimeEnd = new DateTime(2024, 8, 8, 13, 0, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 16, Renter = Renters[8], Bicycle = Bicycles[6],
-                TimeStart = new DateTime(2024, 9, 1, 16, 30, 0), TimeEnd = new DateTime(2024, 9, 1, 18, 30, 0)
+                TimeStart = new DateTime(2024, 9, 1, 16, 30, 0), TimeEnd = new DateTime(2024, 9, 1, 18, 30, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 17, Renter = Renters[8], Bicycle = Bicycles[10],
-                TimeStart = new DateTime(2024, 6, 11, 17, 45, 0), TimeEnd = new DateTime(2024, 6, 11, 18, 45, 0)
+                TimeStart = new DateTime(2024, 6, 11, 17, 45, 0), TimeEnd = new DateTime(2024, 6, 11, 18, 45, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 18, Renter = Renters[8], Bicycle = Bicycles[0],
-                TimeStart = new DateTime(2024, 7, 19, 10, 0, 0), TimeEnd = new DateTime(2024, 7, 19, 13, 0, 0)
+                TimeStart = new DateTime(2024, 7, 19, 10, 0, 0), TimeEnd = new DateTime(2024, 7, 19, 13, 0, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 19, Renter = Renters[9], Bicycle = Bicycles[11],
-                TimeStart = new DateTime(2024, 6, 11, 17, 45, 0), TimeEnd = new DateTime(2024, 6, 11, 18, 45, 0)
+                TimeStart = new DateTime(2024, 6, 11, 17, 45, 0), TimeEnd = new DateTime(2024, 6, 11, 18, 45, 0), BicycleId = 0, RenterId = 0
             },
             new Rent
             {
                 RentId = 20, Renter = Renters[9], Bicycle = Bicycles[7],
-                TimeStart = new DateTime(2024, 8, 3, 16, 0, 0), TimeEnd = new DateTime(2024, 8, 3, 17, 0, 0)
+                TimeStart = new DateTime(2024, 8, 3, 16, 0, 0), TimeEnd = new DateTime(2024, 8, 3, 17, 0, 0), BicycleId = 0, RenterId = 0
             }
         ];
 

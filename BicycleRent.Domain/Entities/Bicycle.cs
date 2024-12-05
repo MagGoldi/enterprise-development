@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,7 +8,6 @@ namespace BicycleRent.Domain.Entities;
 /// <summary>
 /// Класс для описания сущности "Велосипед"
 /// </summary>
-
 [Table("bicycles")]
 public class Bicycle
 {
@@ -32,7 +32,6 @@ public class Bicycle
     [Column("type")]
     public required BicycleType Type { get; set; }
 
-    [ForeignKey("type_id")]
     [Column("type_id")]
     public required int TypeId { get; set; }
 

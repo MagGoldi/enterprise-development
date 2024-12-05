@@ -14,7 +14,7 @@ namespace BicycleRent.WebApplication.Controllers.DataBase;
 /// <param name="mapper">Маппер</param>
 [Route("api/[controller]")]
 [ApiController]
-public class JobRequestsControllerDb(JobRequestsRepositoryDb repository, IMapper mapper) : ControllerBase
+public class JobRequestsDbController(JobRequestsRepositoryDb repository, IMapper mapper) : ControllerBase
 {
     /// <summary>
     /// 1) Вывести информацию обо всех спортивных велосипедах

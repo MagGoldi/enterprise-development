@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController",
     "Method": "Get",
-    "RelativePath": "api/Bicycle",
+    "RelativePath": "api/BicycleDb",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -20,9 +20,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController",
     "Method": "Post",
-    "RelativePath": "api/Bicycle",
+    "RelativePath": "api/BicycleDb",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -36,9 +36,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController",
     "Method": "Get",
-    "RelativePath": "api/Bicycle/{id}",
+    "RelativePath": "api/BicycleDb/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -62,9 +62,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController",
     "Method": "Put",
-    "RelativePath": "api/Bicycle/{id}",
+    "RelativePath": "api/BicycleDb/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -83,9 +83,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleDbController",
     "Method": "Delete",
-    "RelativePath": "api/Bicycle/{id}",
+    "RelativePath": "api/BicycleDb/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -99,9 +99,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController",
     "Method": "Get",
-    "RelativePath": "api/BicycleRenter",
+    "RelativePath": "api/BicycleRenterDb",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -119,9 +119,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController",
     "Method": "Post",
-    "RelativePath": "api/BicycleRenter",
+    "RelativePath": "api/BicycleRenterDb",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -135,9 +135,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController",
     "Method": "Get",
-    "RelativePath": "api/BicycleRenter/{id}",
+    "RelativePath": "api/BicycleRenterDb/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -161,9 +161,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController",
     "Method": "Put",
-    "RelativePath": "api/BicycleRenter/{id}",
+    "RelativePath": "api/BicycleRenterDb/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -182,9 +182,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleRenterController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleRenterDbController",
     "Method": "Delete",
-    "RelativePath": "api/BicycleRenter/{id}",
+    "RelativePath": "api/BicycleRenterDb/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -198,9 +198,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController",
     "Method": "Get",
-    "RelativePath": "api/BicycleType",
+    "RelativePath": "api/BicycleTypeDb",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -218,9 +218,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController",
     "Method": "Post",
-    "RelativePath": "api/BicycleType",
+    "RelativePath": "api/BicycleTypeDb",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -234,9 +234,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController",
     "Method": "Get",
-    "RelativePath": "api/BicycleType/{id}",
+    "RelativePath": "api/BicycleTypeDb/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -260,9 +260,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController",
     "Method": "Put",
-    "RelativePath": "api/BicycleType/{id}",
+    "RelativePath": "api/BicycleTypeDb/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -281,9 +281,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.BicycleTypeController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.BicycleTypeDbController",
     "Method": "Delete",
-    "RelativePath": "api/BicycleType/{id}",
+    "RelativePath": "api/BicycleTypeDb/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -297,9 +297,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController",
     "Method": "GetClientsMaxRent",
-    "RelativePath": "api/JobRequests/GetClientsMaxRent",
+    "RelativePath": "api/JobRequestsDb/GetClientsMaxRent",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -317,9 +317,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController",
     "Method": "GetInfoClientMountain",
-    "RelativePath": "api/JobRequests/GetInfoClientMountain",
+    "RelativePath": "api/JobRequestsDb/GetInfoClientMountain",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -337,9 +337,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController",
     "Method": "GetInfoSportBike",
-    "RelativePath": "api/JobRequests/GetInfoSportBike",
+    "RelativePath": "api/JobRequestsDb/GetInfoSportBike",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -357,9 +357,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController",
     "Method": "GetStatisticTimeRent",
-    "RelativePath": "api/JobRequests/GetStatisticTimeRent",
+    "RelativePath": "api/JobRequestsDb/GetStatisticTimeRent",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -377,9 +377,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController",
     "Method": "GetSumTimeRentForType",
-    "RelativePath": "api/JobRequests/GetSumTimeRentForType",
+    "RelativePath": "api/JobRequestsDb/GetSumTimeRentForType",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -397,9 +397,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.JobRequestsController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.JobRequestsDbController",
     "Method": "GetTopRentBikes",
-    "RelativePath": "api/JobRequests/GetTopRentBikes",
+    "RelativePath": "api/JobRequestsDb/GetTopRentBikes",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -417,9 +417,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.RentDbController",
     "Method": "Get",
-    "RelativePath": "api/Rent",
+    "RelativePath": "api/RentDb",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -437,9 +437,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.RentDbController",
     "Method": "Post",
-    "RelativePath": "api/Rent",
+    "RelativePath": "api/RentDb",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -453,9 +453,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.RentDbController",
     "Method": "Get",
-    "RelativePath": "api/Rent/{id}",
+    "RelativePath": "api/RentDb/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -479,9 +479,9 @@
     ]
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.RentDbController",
     "Method": "Put",
-    "RelativePath": "api/Rent/{id}",
+    "RelativePath": "api/RentDb/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -500,9 +500,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BicycleRent.WebApplication.Controllers.RentController",
+    "ContainingType": "BicycleRent.WebApplication.Controllers.DataBase.RentDbController",
     "Method": "Delete",
-    "RelativePath": "api/Rent/{id}",
+    "RelativePath": "api/RentDb/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
