@@ -31,16 +31,6 @@ builder.Services.AddTransient<IRepositoryDb<Rent, int>, RentRepositoryDb>();
 builder.Services.AddTransient<IRepositoryRequestsDb, JobRequestsRepositoryDb>();
 
 // Add mapper
-
-//builder.Services.AddSingleton(provider => new MapperConfiguration(config =>
-//{
-//    config.AddProfile(new BicycleRentMapper(
-//        provider.GetRequiredService<IRepositoryDb<BicycleType, int>>(),
-//        provider.GetRequiredService<IRepositoryDb<Bicycle, int>>(),
-//        provider.GetRequiredService<IRepositoryDb<BicycleRenter, int>>()
-//        ));
-//}).CreateMapper());
-
 builder.Services.AddAutoMapper(typeof(BicycleRentMapper));
 
 

@@ -20,8 +20,7 @@ public class Rent
     /// <summary>
     /// Арендатор
     /// </summary>
-    //[Column("renter")]
-    public required BicycleRenter Renter { get; set; }
+    public BicycleRenter Renter { get; set; }
 
     
     [Column("renter_id")]
@@ -31,10 +30,8 @@ public class Rent
     /// <summary>
     /// Велосипед
     /// </summary>
-    //[Column("bicycle")]
-    public required Bicycle Bicycle { get; set; }
+    public Bicycle Bicycle { get; set; }
 
-    //[ForeignKey("bicycle_id")]
     [Column("bicycle_id")]
     [Required]
     public required int BicycleId { get; set; }

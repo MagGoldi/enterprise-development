@@ -29,8 +29,7 @@ public class Bicycle
     /// <summary>
     /// Тип велосипеда
     /// </summary>
-    [Column("type")]
-    public required BicycleType Type { get; set; }
+    public  BicycleType Type { get; set; }
 
     [Column("type_id")]
     public required int TypeId { get; set; }

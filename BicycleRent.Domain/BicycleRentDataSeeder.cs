@@ -87,6 +87,7 @@ public class BicycleRentDataSeeder
         for (var i = 0; i < Bicycles.Count; i++)
         {
             Bicycles[i].TypeId = Bicycles[i].Type.TypeId;
+            Bicycles[i].Type = null;
         }
 
         Renters =
@@ -251,6 +252,9 @@ public class BicycleRentDataSeeder
         {
             Rents[i].RenterId = Rents[i].Renter.RenterId;
             Rents[i].BicycleId = Rents[i].Bicycle.BicycleId;
+
+            Rents[i].Bicycle = null;
+            Rents[i].Renter = null;
         }
     }
 }
