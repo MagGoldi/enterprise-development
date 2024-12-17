@@ -8,7 +8,7 @@ public class JobRequestsRepositoryDb(
     IRepositoryDb<Bicycle, int> bicycleRepository,
     IRepositoryDb<BicycleRenter, int> renterRepository,
     IRepositoryDb<Rent, int> rentRepository
-    ) : IRepositoryRequestsDb
+    )
 {
 
     public async Task<List<Bicycle>> GetInfoSportBike()
@@ -18,7 +18,7 @@ public class JobRequestsRepositoryDb(
         var result =
         (
             from bike in _bikes
-            where bike.Type.Type == "Sport"
+            where bike?.Type?.Type == "Sport"
             select bike
         ).ToList();
 
@@ -34,8 +34,8 @@ public class JobRequestsRepositoryDb(
         var result =
         (
             from rent in _rents
-            where rent.Bicycle.Type.Type == "Mountain"
-            orderby rent.Renter.FullName
+            where rent?.Bicycle?.Type?.Type == "Mountain"
+            orderby rent?.Renter?.FullName
             select rent.Renter
         ).Distinct().ToList();
 

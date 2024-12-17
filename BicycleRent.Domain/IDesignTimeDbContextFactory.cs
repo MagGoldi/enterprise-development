@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿//using Microsoft.EntityFrameworkCore;
 
-namespace BicycleRent.Domain;
+//namespace BicycleRent.Domain;
 
-public interface IDesignTimeDbContextFactory<out TContext> where TContext : DbContext;
+//public interface IDesignTimeDbContextFactory<out TContext> where TContext : DbContext;

@@ -28,7 +28,7 @@ builder.Services.AddTransient<IRepositoryDb<BicycleType, int>, BicycleTypeReposi
 builder.Services.AddTransient<IRepositoryDb<Bicycle, int>, BicycleRepositoryDb>();
 builder.Services.AddTransient<IRepositoryDb<BicycleRenter, int>, BicycleRenterRepositoryDb>();
 builder.Services.AddTransient<IRepositoryDb<Rent, int>, RentRepositoryDb>();
-builder.Services.AddTransient<IRepositoryRequestsDb, JobRequestsRepositoryDb>();
+builder.Services.AddTransient<JobRequestsRepositoryDb>();
 
 // Add mapper
 builder.Services.AddAutoMapper(typeof(BicycleRentMapper));

@@ -1,0 +1,427 @@
+﻿@page "/requests"
+@using System.Globalization;
+@inject HttpClient Http
+
+<PageTitle>Requests</PageTitle>
+
+<h1>Requests</h1>
+
+<div class="task-container">
+    <h5>1) Вывести информацию обо всех спортивных велосипедах.</h5>
+    <div class="button-container">
+        <Button class="get-task-result" Color="Blazorise.Color.Primary" Clicked="@(() => ClickHandler(1))">
+            Получить результат
+        </Button>
+        <Button class="clear-task-result" Color="Blazorise.Color.Danger" Clicked="@(() => ClearTask(1))">
+            Очистить
+        </Button>
+    </div>
+
+    @if (query1 != null)
+    {
+        <div class="result-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Серийный номер</th>
+                        <th>Тип велосипеда</th>
+                        <th>Модель велосипеда</th>
+                        <th>Цвет велосипеда</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var bike in query1)
+                    {
+                        <tr>
+                            <td>@bike.BicycleId</td>
+                            <td>@bike.SerialNumber</td>
+                            <td>@GetBikeType(@bike.TypeId)</td>
+                            <td>@bike.Model</td>
+                            <td>@bike.Color</td>
+
+                        </tr>
+                    }
+                </tbody>
+        </table>
+    </div>
+;
+    }
+
+</div>
+<div class="task-container">
+    <h5>
+        2) Вывести информацию обо всех клиентах, которые брали в аренду горные велосипеды, упорядочить по ФИО.
+    </h5>
+    <div class="button-container">
+        <Button class="get-task-result" Color="Blazorise.Color.Primary" Clicked="@(() => ClickHandler(2))">
+            Получить результат
+        </Button>
+        <Button class="clear-task-result" Color="Blazorise.Color.Danger" Clicked="@(() => ClearTask(2))">
+            Очистить
+        </Button>
+    </div>
+
+    @if (query2 != null)
+    {
+        <div class="result-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>ФИО арендатора</th>
+                        <th>Дата рождения</th>
+                        <th>Номер телефона</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var renter in query2)
+                    {
+                        <tr>
+                            <td>@renter.RenterId</td>
+                            <td>@renter.FullName</td>
+                            <td>@renter.BirthDate</td>
+                            <td>@renter.PhoneNumber</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+</div>
+<div class="task-container">
+    <h5>
+        3) Вывести суммарное время аренды велосипедов каждого типа.
+    </h5>
+    <div class="button-container">
+        <Button class="get-task-result" Color="Blazorise.Color.Primary" Clicked="@(() => ClickHandler(3))">
+            Получить результат
+        </Button>
+        <Button class="clear-task-result" Color="Blazorise.Color.Danger" Clicked="@(() => ClearTask(3))">
+            Очистить
+        </Button>
+    </div>
+
+    @if (query3 != null)
+    {
+        <div class="result-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Тип</th>
+                        <th>Цена аренды</th>
+                        <th>Сумарное время аренды</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var res in query3)
+                    {
+                        <tr>
+                            <td>@res.EntityRent.TypeId</td>
+                            <td>@res.EntityRent.Type</td>
+                            <td>@res.EntityRent.Price</td>
+                            <td>@res.Count</td>
+
+                        </tr>
+                    }
+                </tbody>
+        </table>
+    </div>
+    ;
+    }
+
+</div>
+<div class="task-container">
+    <h5>
+        4) Вывести информацию о клиентах, бравших велосипеды на прокат больше всего раз.
+    </h5>
+    <div class="button-container">
+        <Button class="get-task-result" Color="Blazorise.Color.Primary" Clicked="@(() => ClickHandler(4))">
+            Получить результат
+        </Button>
+        <Button class="clear-task-result" Color="Blazorise.Color.Danger" Clicked="@(() => ClearTask(4))">
+            Очистить
+        </Button>
+    </div>
+
+    @if (query4 != null)
+    {
+        <div class="result-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>ФИО арендатора</th>
+                        <th>Дата рождения</th>
+                        <th>Номер телефона</th>
+                        <th>Количество велосипедов, взятых в аренду</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var res in query4)
+                    {
+                        <tr>
+                            <td>@res.EntityRent.RenterId</td>
+                            <td>@res.EntityRent.FullName</td>
+                            <td>@res.EntityRent.BirthDate</td>
+                            <td>@res.EntityRent.PhoneNumber</td>
+                            <td>@res.Count</td>
+
+                        </tr>
+                    }
+                </tbody>
+        </table>
+    </div>
+    ;
+    }
+
+</div>
+<div class="task-container">
+    <h5>
+        5) Вывести информацию о топ 5 наиболее часто арендуемых велосипедов.
+    </h5>
+
+    <div class="button-container">
+        <Button class="get-task-result" Color="Blazorise.Color.Primary" Clicked="@(() => ClickHandler(5))">
+            Получить результат
+        </Button>
+        <Button class="clear-task-result" Color="Blazorise.Color.Danger" Clicked="@(() => ClearTask(5))">
+            Очистить
+        </Button>
+    </div>
+
+    @if (query5 != null)
+    {
+        <div class="result-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Серийный номер</th>
+                        <th>Тип велосипеда</th>
+                        <th>Модель велосипеда</th>
+                        <th>Цвет велосипеда</th>
+                        <th>Сколько раз брали в аренду</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var res in query5)
+                    {
+                        <tr>
+                            <td>@res.EntityRent.BicycleId</td>
+                            <td>@res.EntityRent.SerialNumber</td>
+                            <td>@GetBikeType(@res.EntityRent.TypeId)</td>
+                            <td>@res.EntityRent.Model</td>
+                            <td>@res.EntityRent.Color</td>
+                            <td>@res.Count</td>
+
+                        </tr>
+                    }
+                </tbody>
+        </table>
+    </div>
+    ;
+    }
+
+</div>
+<div class="task-container">
+    <h5>
+        6) Вывести информацию о минимальном, максимальном и среднем времени аренды велосипедов.
+    </h5>
+    <div class="button-container">
+        <Button class="get-task-result" Color="Blazorise.Color.Primary" Clicked="@(() => ClickHandler(6))">
+            Получить результат
+        </Button>
+        <Button class="clear-task-result" Color="Blazorise.Color.Danger" Clicked="@(() => ClearTask(6))">
+            Очистить
+        </Button>
+    </div>
+
+    @if (query6 != null)
+    {
+        <div class="result-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Минимальное время аренды</th>
+                        <th>Максимальное время аренды</th>
+                        <th>Средное время аренды</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr>
+                        <td>@query6[0]</td>
+                        <td>@query6[1]</td>
+                        <td>@query6[2]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        ;
+    }
+
+</div>
+
+
+@code {
+    private List<Rent> _rents = new();
+    private List<BicycleRenter> _renters = new();
+    private List<Bicycle> _bikes = new();
+    private List<BicycleType> _types = new();
+
+    private string rentUrl = "api/RentDb";
+    private string renterUrl = "api/BicycleRenterDb";
+    private string bikeUrl = "api/BicycleDb";
+    private string typeUrl = "api/BicycleTypeDb";
+
+
+
+
+    private List<BicycleDto> query1 = null!;
+    private List<BicycleRenterDto> query2 = null!;
+    private List<NumberAndEntity<double, BicycleTypeDto>> query3 = null!;
+    private List<NumberAndEntity<int, BicycleRenterDto>> query4 = null!;
+    private List<NumberAndEntity<int, BicycleDto>> query5 = null!;
+    private List<double> query6 = null!;
+
+
+
+    private async Task LoadTypes()
+    {
+        var responseType = await Http.GetFromJsonAsync<List<BicycleType>>(typeUrl);
+        if (responseType != null)
+        {
+            _types = responseType;
+        }
+    }
+
+    private async Task LoadRents()
+    {
+        var responseRent = await Http.GetFromJsonAsync<List<Rent>>(rentUrl);
+        if (responseRent != null)
+        {
+            _rents = responseRent;
+        }
+    }
+
+    private async Task LoadRenters()
+    {
+        var responseRenter = await Http.GetFromJsonAsync<List<BicycleRenter>>(renterUrl);
+        if (responseRenter != null)
+        {
+            _renters = responseRenter;
+        }
+    }
+
+    private async Task LoadBikes()
+    {
+        var responseBike = await Http.GetFromJsonAsync<List<Bicycle>>(bikeUrl);
+        if (responseBike != null)
+        {
+            _bikes = responseBike;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRents();
+        await LoadRenters();
+        await LoadBikes();
+        await LoadTypes();
+    }
+
+    private async Task ClickHandler(int taskId)
+    {
+        switch (taskId)
+        {
+            case 1:
+                var response1 = await Http.GetFromJsonAsync<List<BicycleDto>>("api/JobRequestsDb/GetInfoSportBike?departure");
+                if (response1 != null)
+                {
+                    query1 = response1;
+                }
+                break;
+            case 2:
+                var response2 = await Http.GetFromJsonAsync<List<BicycleRenterDto>>("api/JobRequestsDb/GetInfoClientMountain");
+                if (response2 != null)
+                {
+                    query2 = response2;
+                }
+                break;
+            case 3:
+                var response3 = await Http.GetFromJsonAsync<List<NumberAndEntity<double, BicycleTypeDto>>>("api/JobRequestsDb/GetSumTimeRentForType");
+                if (response3 != null)
+                {
+                    query3 = response3;
+                }
+                break;
+            case 4:
+                var response4 = await Http.GetFromJsonAsync<List<NumberAndEntity<int, BicycleRenterDto>>>("api/JobRequestsDb/GetClientsMaxRent");
+                if (response4 != null)
+                {
+                    query4 = response4;
+                }
+                break;
+            case 5:
+                var response5 = await Http.GetFromJsonAsync<List<NumberAndEntity<int, BicycleDto>>>("api/JobRequestsDb/GetTopRentBikes");
+                if (response5 != null)
+                {
+                    query5 = response5;
+                }
+                break;
+            case 6:
+                var response6 = await Http.GetFromJsonAsync<List<double>>("api/JobRequestsDb/GetStatisticTimeRent");
+                if (response6 != null)
+                {
+                    query6 = response6;
+                }
+                break;
+        }
+    }
+
+    private void ClearTask(int taskId)
+    {
+        switch (taskId)
+        {
+            case 1:
+                query1 = null!;
+                break;
+            case 2:
+                query2 = null!;
+                break;
+            case 3:
+                query3 = null!;
+                break;
+            case 4:
+                query4 = null!;
+                break;
+            case 5:
+                query5 = null!;
+                break;
+            case 6:
+                query6 = null!;
+                break;
+        }
+    }
+
+    private string GetRenterName(int renterId) => _renters?.FirstOrDefault(p => p.RenterId == renterId)?.FullName!;
+    private string GetBikeSerialNumber(int bikeId) => _bikes?.FirstOrDefault(p => p.BicycleId == bikeId)?.SerialNumber!;
+    private int? GetBikeTypeId(int bikeId) => _bikes?.FirstOrDefault(p => p.BicycleId == bikeId)?.TypeId!;
+    private string GetBikeType(int? typeId) => _types?.FirstOrDefault(p => p.TypeId == typeId)?.Type!;
+
+}

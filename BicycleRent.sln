@@ -7,12 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BicycleRent.Domain", "Bicyc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BicycleRent.Tests", "BicycleRent.Tests\BicycleRent.Tests.csproj", "{86C916E8-6568-4B50-88FF-9344DBC712B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BicycleRent.Servicies", "BicycleRent.Servicies\BicycleRent.Servicies.csproj", "{4456C9DE-D395-40FC-8F4D-EAEA9D3EB9B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BicycleRent.Servicies", "BicycleRent.Servicies\BicycleRent.Servicies.csproj", "{4456C9DE-D395-40FC-8F4D-EAEA9D3EB9B6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8112BE1B-A936-47EE-963D-F22322B90E1A} = {8112BE1B-A936-47EE-963D-F22322B90E1A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BicycleRent.WebApplication", "BicycleRent.WebApplication\BicycleRent.WebApplication.csproj", "{1BC126C6-BF2A-4CA1-8A68-1060B189C136}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BicycleRent.WebApplication", "BicycleRent.WebApplication\BicycleRent.WebApplication.csproj", "{1BC126C6-BF2A-4CA1-8A68-1060B189C136}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BicycleRent.Client", "BicycleRent.Client\BicycleRent.Client.csproj", "{9B0E06C8-28C4-4726-B4E1-6B18921BBD87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,10 @@ Global
 		{1BC126C6-BF2A-4CA1-8A68-1060B189C136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC126C6-BF2A-4CA1-8A68-1060B189C136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC126C6-BF2A-4CA1-8A68-1060B189C136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0E06C8-28C4-4726-B4E1-6B18921BBD87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0E06C8-28C4-4726-B4E1-6B18921BBD87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0E06C8-28C4-4726-B4E1-6B18921BBD87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0E06C8-28C4-4726-B4E1-6B18921BBD87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

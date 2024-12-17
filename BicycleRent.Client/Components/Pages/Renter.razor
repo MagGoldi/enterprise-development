@@ -1,0 +1,180 @@
+﻿@page "/renters"
+@using System.Globalization;
+@inject HttpClient Http
+
+<PageTitle>Renters</PageTitle>
+
+<h1>Арендаторы велосипедов</h1>
+
+<p>Список арендаторы велосипедов.</p>
+
+<Button class="add-new-button" Clicked="@ShowAdd" Color="Blazorise.Color.Primary">
+    Добавить арендатора
+</Button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>ФИО арендатора</th>
+            <th>Дата рождения</th>
+            <th>Номер телефона</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var renter in _renters)
+        {
+            <tr>
+                <td>@renter.RenterId</td>
+                <td>@renter.FullName</td>
+                <td>@renter.BirthDate</td>
+                <td>@renter.PhoneNumber</td>
+                <td>
+                    <Button Color="Blazorise.Color.Primary"
+                            class="edit-item"
+                            @onclick="@(() => ShowUpdate(renter.RenterId))"
+                            Style="max-width: 89px"
+                            TextAlignment="TextAlignment.Center">
+                        UPDATE
+                    </Button>
+                </td>
+                <td>
+                    <Button Color="Blazorise.Color.Danger"
+                            class="edit-item"
+                            @onclick="@(() => DeleteItem(renter.RenterId))"
+                            Style="max-width: 89px"
+                            TextAlignment="TextAlignment.Center">
+                        DELETE
+                    </Button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<Modal @ref="modalRef">
+    <ModalContent Centered>
+        <ModalHeader>
+            <h5>Добавить арендатора</h5>
+        </ModalHeader>
+        <ModalBody>
+            <div class="mb-3">
+                <label for="fullName">ФИО арендатора</label>
+                <input type="text" id="fullName" @bind="newRenter.FullName" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="birthDate">Дата рождения</label>
+                <input type="date" id="birthDate" @bind="newRenter.BirthDate" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="phoneNumber">Номер телефона</label>
+                <input type="text" id="phoneNumber" @bind="newRenter.PhoneNumber" class="form-control" />
+            </div>
+            
+        </ModalBody>
+
+        <ModalFooter>
+            <Button Color="Blazorise.Color.Primary" Clicked="@(forAdd ? AddNewItem : UpdateItem)">
+                @(forAdd ? "Добавить" : "Изменить")
+            </Button>
+            <Button Color="Blazorise.Color.Secondary" Clicked="@CancelHandler">
+                Отмена
+            </Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+@code {
+    private List<BicycleRenter> _renters = new();
+
+    private Modal? modalRef = null!;
+    private BicycleRenter newRenter = new()
+        {
+            RenterId = 0,
+            FullName = "N000",
+            BirthDate = DateOnly.Parse("1990-01-01"),
+            PhoneNumber = ""
+        };
+    private bool forAdd = true;
+    private string renterUrl = "api/BicycleRenterDb";
+
+
+    private async Task LoadRenters()
+    {
+        var responseRenter = await Http.GetFromJsonAsync<List<BicycleRenter>>(renterUrl);
+        if (responseRenter != null)
+        {
+            _renters = responseRenter;
+        }
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRenters();
+    }
+
+    private async Task ShowUpdate(int renterId)
+    {
+        forAdd = false;
+        var response = await Http.GetFromJsonAsync<BicycleRenter>($"{renterUrl}/{renterId}");
+        if (response != null)
+        {
+            newRenter = response;
+        }
+        await modalRef!.Show();
+    }
+
+    private async Task ShowAdd()
+    {
+        forAdd = true;
+        newRenter = new()
+            {
+                RenterId = 0,
+                FullName = "N000",
+                BirthDate = DateOnly.Parse("1990-01-01"),
+                PhoneNumber = ""
+            };
+        await LoadRenters();
+        await modalRef!.Show();
+    }
+
+
+
+    private async Task CancelHandler()
+    {
+        await modalRef!.Hide();
+    }
+
+    private async Task AddNewItem()
+    {
+        await Http.PostAsJsonAsync<BicycleRenter>(renterUrl, newRenter);
+        await LoadRenters();
+        await modalRef!.Hide();
+    }
+
+    private async Task UpdateItem()
+    {
+        await Http.PutAsJsonAsync($"{renterUrl}/{newRenter.RenterId}", newRenter);
+
+        newRenter = new()
+            {
+                RenterId = 0,
+                FullName = "N000",
+                BirthDate = DateOnly.Parse("1990-01-01"),
+                PhoneNumber = ""
+            };
+        await LoadRenters();
+        await modalRef!.Hide();
+    }
+
+    private async Task DeleteItem(int renterId)
+    {
+        await Http.DeleteAsync($"{renterUrl}/{renterId}");
+        await LoadRenters();
+    }
+
+    
+}

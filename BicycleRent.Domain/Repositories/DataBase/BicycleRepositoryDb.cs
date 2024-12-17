@@ -16,7 +16,7 @@ public class BicycleRepositoryDb(BicycleRentDbContext context) : IRepositoryDb<B
     /// <returns>Список с элементами сущности "Велосипед"</returns>
     public async Task<List<Bicycle>> GetList()
     {
-        return await context.Bicycles.ToListAsync();
+        return await context.Bicycles.Include(b => b.Type).ToListAsync();
     }
 
 
@@ -59,7 +59,7 @@ public class BicycleRepositoryDb(BicycleRentDbContext context) : IRepositoryDb<B
         bicycle.BicycleId = newItemValue.BicycleId;
         bicycle.SerialNumber = newItemValue.SerialNumber;
         bicycle.Type = newItemValue.Type;
-        //bicycle.TypeId = newItemValue.TypeId;
+        bicycle.TypeId = newItemValue.TypeId;
         bicycle.Model = newItemValue.Model;
         bicycle.Color = newItemValue.Color;
 

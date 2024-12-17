@@ -24,7 +24,10 @@ public class RentDbController(IRepositoryDb<Rent, int> repository, IMapper mappe
     public async Task<ActionResult<IEnumerable<RentDto>>> Get()
     {
         var repo = await repository.GetList();
-
+        repo =
+        (
+            from r in repo orderby r.RentId select r
+        ).ToList();
         var get = mapper.Map<List<RentDto>>(repo);
         if (get.Count == 0)
             return NoContent();

@@ -1,0 +1,249 @@
+﻿@page "/rents"
+@using System.Globalization;
+@inject HttpClient Http
+
+<PageTitle>Rents</PageTitle>
+
+<h1>Rents</h1>
+
+<p>Список аренд велосипедов.</p>
+
+<Button class="add-new-button" Clicked="@ShowAdd" Color="Blazorise.Color.Primary">
+    Добавить аренд велосипедов
+</Button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Арендатор</th>
+            <th>Велосипед</th>
+            <th>Начало аренды</th>
+            <th>Окончание аренды</th>
+            <th>Время аренды</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var rent in _rents)
+        {
+            <tr>
+                <td>@rent.RentId</td>
+                <td>@GetRenterName(@rent.RenterId)</td>
+                <td>@GetBikeSerialNumber(@rent.BicycleId)</td>
+                <td>@rent.TimeStart</td>
+                <td>@rent.TimeEnd</td>
+                <td>@rent.TimeRent</td>
+                <td>
+                    <Button Color="Blazorise.Color.Primary"
+                            class="edit-item"
+                            @onclick="@(() => ShowUpdate(rent.RentId))"
+                            Style="max-width: 89px"
+                            TextAlignment="TextAlignment.Center">
+                        UPDATE
+                    </Button>
+                </td>
+                <td>
+                    <Button Color="Blazorise.Color.Danger"
+                            class="edit-item"
+                            @onclick="@(() => DeleteItem(rent.RentId))"
+                            Style="max-width: 89px"
+                            TextAlignment="TextAlignment.Center">
+                        DELETE
+                    </Button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<Modal @ref="modalRef">
+    <ModalContent Centered>
+        <ModalHeader>
+            <h5>Добавить аренд велосипедов</h5>
+        </ModalHeader>
+        <ModalBody>
+            <div class="mb-3">
+                <label for="renterId">Арендатор</label>
+                <select id="renterId" @bind="newRent.RenterId">
+                    @foreach (var renter in _renters)
+                    {
+                        <option>@renter.RenterId</option>
+                    }
+                </select>
+                <p class="form-control" style="border: none">@GetRenterName(newRent.RenterId)</p>
+            </div>
+            <div class="mb-3">
+                <label for="bicycleId">Велосипед</label>
+                <select id="bicycleId" @bind="newRent.BicycleId">
+                    @foreach (var bike in _bikes)
+                    {
+                        <option>@bike.BicycleId</option>
+                    }
+                </select>
+                <p class="form-control" style="border: none">@GetBikeSerialNumber(newRent.BicycleId)</p>
+                <p class="form-control" style="border: none">@GetBikeType(@GetBikeTypeId(newRent.BicycleId))</p>
+            </div>
+            <div class="mb-3">
+                <label for="timeStart">Начало аренды</label>
+                <input type="datetime" id="timeStart" @bind="newRent.TimeStart" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="timeEnd">Окончание аренды</label>
+                <input type="datetime" id="timeEnd" @bind="newRent.TimeEnd" class="form-control" />
+            </div>
+            
+        </ModalBody>
+
+        <ModalFooter>
+            <Button Color="Blazorise.Color.Primary" Clicked="@(forAdd ? AddNewItem : UpdateItem)">
+                @(forAdd ? "Добавить" : "Изменить")
+            </Button>
+            <Button Color="Blazorise.Color.Secondary" Clicked="@CancelHandler">
+                Отмена
+            </Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+@code {
+    private List<Rent> _rents = new();
+    private List<BicycleRenter> _renters = new();
+    private List<Bicycle> _bikes = new();
+    private List<BicycleType> _types = new();
+
+    private Modal? modalRef = null!;
+    private Rent newRent = new()
+        {
+            RentId = 0,
+            Renter = null,
+            RenterId = 0,
+            Bicycle = null,
+            BicycleId = 0,
+            TimeStart = DateTime.Now,
+            TimeEnd = DateTime.Now
+        };
+    private bool forAdd = true;
+    
+    private string rentUrl = "api/RentDb";
+    private string renterUrl = "api/BicycleRenterDb";
+    private string bikeUrl = "api/BicycleDb";
+    private string typeUrl = "api/BicycleTypeDb";
+
+    private async Task LoadTypes()
+    {
+        var responseType = await Http.GetFromJsonAsync<List<BicycleType>>(typeUrl);
+        if (responseType != null)
+        {
+            _types = responseType;
+        }
+    }
+
+    private async Task LoadRents()
+    {
+        var responseRent = await Http.GetFromJsonAsync<List<Rent>>(rentUrl);
+        if (responseRent != null)
+        {
+            _rents = responseRent;
+        }
+    }
+
+    private async Task LoadRenters()
+    {
+        var responseRenter = await Http.GetFromJsonAsync<List<BicycleRenter>>(renterUrl);
+        if (responseRenter != null)
+        {
+            _renters = responseRenter;
+        }
+    }
+
+    private async Task LoadBikes()
+    {
+        var responseBike = await Http.GetFromJsonAsync<List<Bicycle>>(bikeUrl);
+        if (responseBike != null)
+        {
+            _bikes = responseBike;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadRents();
+        await LoadRenters();
+        await LoadBikes();
+        await LoadTypes();
+    }
+
+    private async Task ShowUpdate(int rentId)
+    {
+        forAdd = false;
+        var response = await Http.GetFromJsonAsync<Rent>($"{rentUrl}/{rentId}");
+        if (response != null)
+        {
+            newRent = response;
+        }
+        await modalRef!.Show();
+    }
+
+    private async Task ShowAdd()
+    {
+        forAdd = true;
+        newRent = new()
+            {
+                RentId = 0,
+                Renter = null,
+                RenterId = 0,
+                Bicycle = null,
+                BicycleId = 0,
+                TimeStart = DateTime.Now,
+                TimeEnd = DateTime.Now
+            };
+        await LoadRents();
+        await modalRef!.Show();
+    }
+
+
+
+    private async Task CancelHandler()
+    {
+        await modalRef!.Hide();
+    }
+
+    private async Task AddNewItem()
+    {
+        await Http.PostAsJsonAsync<Rent>(rentUrl, newRent);
+        await LoadRents();
+        await modalRef!.Hide();
+    }
+
+    private async Task UpdateItem()
+    {
+        await Http.PutAsJsonAsync($"{rentUrl}/{newRent.RentId}", newRent);
+
+        newRent = new()
+            {
+                RentId = 0,
+                Renter = null,
+                RenterId = 0,
+                Bicycle = null,
+                BicycleId = 0,
+                TimeStart = DateTime.Now,
+                TimeEnd = DateTime.Now
+            };
+        await LoadRents();
+        await modalRef!.Hide();
+    }
+
+    private async Task DeleteItem(int rentId)
+    {
+        await Http.DeleteAsync($"{rentUrl}/{rentId}");
+        await LoadRents();
+    }
+
+    private string GetRenterName(int renterId) => _renters?.FirstOrDefault(p => p.RenterId == renterId)?.FullName!;
+    private string GetBikeSerialNumber(int bikeId) => _bikes?.FirstOrDefault(p => p.BicycleId == bikeId)?.SerialNumber!;
+    private int? GetBikeTypeId(int bikeId) => _bikes?.FirstOrDefault(p => p.BicycleId == bikeId)?.TypeId!;
+    private string GetBikeType(int? typeId) => _types?.FirstOrDefault(p => p.TypeId == typeId)?.Type!;
+
+}

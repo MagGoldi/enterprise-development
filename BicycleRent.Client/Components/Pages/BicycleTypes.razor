@@ -1,0 +1,169 @@
+﻿@page "/types"
+@using System.Globalization;
+@inject HttpClient Http
+
+<PageTitle>BicycleTypes</PageTitle>
+
+<h1>Типы велосипедов</h1>
+
+<p>Типы велосипедов.</p>
+
+<Button class="add-new-button" Clicked="@ShowAdd" Color="Blazorise.Color.Primary">
+    Добавить тип велосипеда
+</Button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Тип</th>
+            <th>Цена аренды</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var type in _types)
+        {
+            <tr>
+                <td>@type.TypeId</td>
+                <td>@type.Type</td>
+                <td>@type.Price</td>
+                <td>
+                    <Button Color="Blazorise.Color.Primary"
+                            class="edit-item"
+                            @onclick="@(() => ShowUpdate(type.TypeId))"
+                            Style="max-width: 89px"
+                            TextAlignment="TextAlignment.Center">
+                        UPDATE
+                    </Button>
+                </td>
+                <td>
+                    <Button Color="Blazorise.Color.Danger"
+                            class="edit-item"
+                            @onclick="@(() => DeleteItem(type.TypeId))"
+                            Style="max-width: 89px"
+                            TextAlignment="TextAlignment.Center">
+                        DELETE
+                    </Button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<Modal @ref="modalRef">
+    <ModalContent Centered>
+        <ModalHeader>
+            <h5>Добавить тип велосипеда</h5>
+        </ModalHeader>
+        <ModalBody>
+            <div class="mb-3">
+                <label for="еype">Тип велосипеда</label>
+                <input type="text" id="еype" @bind="newType.Type" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="price">Цена аренда</label>
+                <input type="decimal" id="price" @bind="newType.Price" class="form-control" />
+            </div>
+        </ModalBody>
+
+        <ModalFooter>
+            <Button Color="Blazorise.Color.Primary" Clicked="@(forAdd ? AddNewItem : UpdateItem)">
+                @(forAdd ? "Добавить" : "Изменить")
+            </Button>
+            <Button Color="Blazorise.Color.Secondary" Clicked="@CancelHandler">
+                Отмена
+            </Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+@code {
+    private List<BicycleType> _types = new();
+
+    private Modal? modalRef = null!;
+
+    private BicycleType newType = new()
+        {
+            TypeId = 0,
+            Type = "",
+            Price = 0
+        };
+    private bool forAdd = true;
+    private string typeUrl = "api/BicycleTypeDb";
+
+
+    private async Task LoadTypes()
+    {
+        var responseType = await Http.GetFromJsonAsync<List<BicycleType>>(typeUrl);
+        if (responseType != null)
+        {
+            _types = responseType;
+        }
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadTypes();
+    }
+
+    private async Task ShowUpdate(int typeId)
+    {
+        forAdd = false;
+        var response = await Http.GetFromJsonAsync<BicycleType>($"{typeUrl}/{typeId}");
+        if (response != null)
+        {
+            newType = response;
+        }
+        await modalRef!.Show();
+    }
+
+    private async Task ShowAdd()
+    {
+        forAdd = true;
+        newType = new()
+            {
+                TypeId = 0,
+                Type = "",
+                Price = 0
+            };
+        await LoadTypes();
+        await modalRef!.Show();
+    }
+
+
+
+    private async Task CancelHandler()
+    {
+        await modalRef!.Hide();
+    }
+
+    private async Task AddNewItem()
+    {
+        await Http.PostAsJsonAsync<BicycleType>(typeUrl, newType);
+        await LoadTypes();
+        await modalRef!.Hide();
+    }
+
+    private async Task UpdateItem()
+    {
+        await Http.PutAsJsonAsync($"{typeUrl}/{newType.TypeId}", newType);
+
+        newType = new()
+            {
+                TypeId = 0,
+                Type = "",
+                Price = 0
+            };
+        await LoadTypes();
+        await modalRef!.Hide();
+    }
+
+    private async Task DeleteItem(int typeId)
+    {
+        await Http.DeleteAsync($"{typeUrl}/{typeId}");
+        await LoadTypes();
+    }
+}

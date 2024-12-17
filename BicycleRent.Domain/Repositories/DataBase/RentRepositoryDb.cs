@@ -13,7 +13,7 @@ public class RentRepositoryDb(BicycleRentDbContext context) : IRepositoryDb<Rent
     /// <returns>Список с элементами сущности "Аренда Велосипеда"</returns>
     public async Task<List<Rent>> GetList()
     {
-        return await context.Rents.ToListAsync();
+        return await context.Rents.Include(b => b.Renter).Include(b => b.Bicycle).ThenInclude(b => b.Type).ToListAsync();
     }
 
 

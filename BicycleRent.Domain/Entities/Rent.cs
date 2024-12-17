@@ -20,7 +20,7 @@ public class Rent
     /// <summary>
     /// Арендатор
     /// </summary>
-    public BicycleRenter Renter { get; set; }
+    public BicycleRenter? Renter { get; set; }
 
     
     [Column("renter_id")]
@@ -30,7 +30,7 @@ public class Rent
     /// <summary>
     /// Велосипед
     /// </summary>
-    public Bicycle Bicycle { get; set; }
+    public Bicycle? Bicycle { get; set; }
 
     [Column("bicycle_id")]
     [Required]
