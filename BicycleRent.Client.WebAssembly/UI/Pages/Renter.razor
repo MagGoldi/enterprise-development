@@ -1,6 +1,6 @@
 ﻿@page "/renters"
 @using System.Globalization;
-@inject HttpClient Http
+@inject IBicycleRentApiWrapper wrapper;
 
 <PageTitle>Renters</PageTitle>
 
@@ -64,8 +64,13 @@
                 <input type="text" id="fullName" @bind="newRenter.FullName" class="form-control" />
             </div>
             <div class="mb-3">
-                <label for="birthDate">Дата рождения</label>
-                <input type="date" id="birthDate" @bind="newRenter.BirthDate" class="form-control" />
+                <p>Дата рождения</p>
+                <label for="year">Год</label>
+                <input type="int" id="year" @bind="newRenter.BirthDate.Year" class="form-control" />
+                <label for="month">Месяц</label>
+                <input type="int" id="month" @bind="newRenter.BirthDate.Month" class="form-control" />
+                <label for="day">День</label>
+                <input type="int" id="day" @bind="newRenter.BirthDate.Day" class="form-control" />
             </div>
             <div class="mb-3">
                 <label for="phoneNumber">Номер телефона</label>
@@ -87,14 +92,14 @@
 
 
 @code {
-    private List<BicycleRenter> _renters = new();
+    private List<BicycleRenterDto> _renters = new();
 
     private Modal? modalRef = null!;
-    private BicycleRenter newRenter = new()
+    private BicycleRenterDto newRenter = new()
         {
             RenterId = 0,
             FullName = "N000",
-            BirthDate = DateOnly.Parse("1990-01-01"),
+            BirthDate = new WebAssembly.DateOnly { Year = 1990, Month = 1, Day = 1 },
             PhoneNumber = ""
         };
     private bool forAdd = true;
@@ -103,10 +108,10 @@
 
     private async Task LoadRenters()
     {
-        var responseRenter = await Http.GetFromJsonAsync<List<BicycleRenter>>(renterUrl);
+        var responseRenter = await wrapper.GetAllBicycleRenters();
         if (responseRenter != null)
         {
-            _renters = responseRenter;
+            _renters = responseRenter.ToList();
         }
     }
 
@@ -119,7 +124,7 @@
     private async Task ShowUpdate(int renterId)
     {
         forAdd = false;
-        var response = await Http.GetFromJsonAsync<BicycleRenter>($"{renterUrl}/{renterId}");
+        var response = await wrapper.GetBicycleRenter(renterId);
         if (response != null)
         {
             newRenter = response;
@@ -134,7 +139,7 @@
             {
                 RenterId = 0,
                 FullName = "N000",
-                BirthDate = DateOnly.Parse("1990-01-01"),
+                BirthDate = new WebAssembly.DateOnly { Year = 1990, Month = 1, Day = 1 },
                 PhoneNumber = ""
             };
         await LoadRenters();
@@ -150,20 +155,20 @@
 
     private async Task AddNewItem()
     {
-        await Http.PostAsJsonAsync<BicycleRenter>(renterUrl, newRenter);
+        await wrapper.CreateBicycleRenter(newRenter);
         await LoadRenters();
         await modalRef!.Hide();
     }
 
     private async Task UpdateItem()
     {
-        await Http.PutAsJsonAsync($"{renterUrl}/{newRenter.RenterId}", newRenter);
+        await wrapper.UpdateBicycleRenter(newRenter.RenterId, newRenter);
 
         newRenter = new()
             {
                 RenterId = 0,
                 FullName = "N000",
-                BirthDate = DateOnly.Parse("1990-01-01"),
+                BirthDate = new WebAssembly.DateOnly { Year = 1990, Month = 1, Day = 1 },
                 PhoneNumber = ""
             };
         await LoadRenters();
@@ -172,7 +177,7 @@
 
     private async Task DeleteItem(int renterId)
     {
-        await Http.DeleteAsync($"{renterUrl}/{renterId}");
+        await wrapper.DeleteBicycleRenter(renterId);
         await LoadRenters();
     }
 

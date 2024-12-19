@@ -1,6 +1,6 @@
 ﻿@page "/"
 @using System.Globalization;
-@inject HttpClient Http
+@inject IBicycleRentApiWrapper wrapper;
 
 <PageTitle>Bicycles</PageTitle>
 
@@ -32,7 +32,7 @@
                 <td>@GetType(@bike.TypeId)</td>
                 <td>@bike.Model</td>
                 <td>@bike.Color</td>
-                <td>
+                    <td>
                     <Button Color="Blazorise.Color.Primary"
                             class="edit-item"
                             @onclick="@(() => ShowUpdate(bike.BicycleId))"
@@ -99,16 +99,15 @@
 
 
 @code {
-    private List<Bicycle> _bicycles = new();
-    private List<BicycleType> _types = new();
+    private List<BicycleDto> _bicycles = new();
+    private List<BicycleTypeDto> _types = new();
 
     private Modal? modalRef = null!;
 
-    private Bicycle newBicycle = new()
+    private BicycleDto newBicycle = new()
         {
             BicycleId = 0,
             SerialNumber = "N000",
-            Type = null,
             TypeId = 0,
             Model = "",
             Color = ""
@@ -120,19 +119,19 @@
 
     private async Task LoadTypes()
     {
-        var responseType = await Http.GetFromJsonAsync<List<BicycleType>>(typeUrl);
+        var responseType = await wrapper.GetAllBicycleTypes();
         if (responseType != null)
         {
-            _types = responseType;
+            _types = responseType.ToList();
         }
     }
 
     private async Task LoadBicycles()
     {
-        var responseBicycle = await Http.GetFromJsonAsync<List<Bicycle>>(bicycleUrl);
+        var responseBicycle = await wrapper.GetAllBicycles();
         if (responseBicycle != null)
         {
-            _bicycles = responseBicycle;
+            _bicycles = responseBicycle.ToList();
         }
     }
 
@@ -146,7 +145,7 @@
     private async Task ShowUpdate(int bicycleId)
     {
         forAdd = false;
-        var response = await Http.GetFromJsonAsync<Bicycle>($"{bicycleUrl}/{bicycleId}");
+        var response = await wrapper.GetBicycle(bicycleId);
         if (response != null)
         {
             newBicycle = response;
@@ -161,7 +160,6 @@
             {
                 BicycleId = 0,
                 SerialNumber = "N000",
-                Type = null,
                 TypeId = 0,
                 Model = "",
                 Color = ""
@@ -179,20 +177,19 @@
 
     private async Task AddNewItem()
     {
-        await Http.PostAsJsonAsync<Bicycle>(bicycleUrl, newBicycle);
+        await wrapper.CreateBicycle(newBicycle);
         await LoadBicycles();
         await modalRef!.Hide();
     }
 
     private async Task UpdateItem()
     {
-        await Http.PutAsJsonAsync($"{bicycleUrl}/{newBicycle.BicycleId}", newBicycle);
+        await wrapper.UpdateBicycle(newBicycle.BicycleId, newBicycle);
 
         newBicycle = new()
             {
                 BicycleId = 0,
                 SerialNumber = "N000",
-                Type = null,
                 TypeId = 0,
                 Model = "",
                 Color = ""
@@ -203,7 +200,7 @@
 
     private async Task DeleteItem(int bicycleId)
     {
-        await Http.DeleteAsync($"{bicycleUrl}/{bicycleId}");
+        await wrapper.DeleteBicycle(bicycleId);
         await LoadBicycles();
     }
 

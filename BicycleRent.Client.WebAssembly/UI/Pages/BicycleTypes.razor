@@ -1,6 +1,6 @@
 ﻿@page "/types"
 @using System.Globalization;
-@inject HttpClient Http
+@inject IBicycleRentApiWrapper wrapper;
 
 <PageTitle>BicycleTypes</PageTitle>
 
@@ -80,11 +80,11 @@
 
 
 @code {
-    private List<BicycleType> _types = new();
+    private List<BicycleTypeDto> _types = new();
 
     private Modal? modalRef = null!;
 
-    private BicycleType newType = new()
+    private BicycleTypeDto newType = new()
         {
             TypeId = 0,
             Type = "",
@@ -96,10 +96,10 @@
 
     private async Task LoadTypes()
     {
-        var responseType = await Http.GetFromJsonAsync<List<BicycleType>>(typeUrl);
+        var responseType = await wrapper.GetAllBicycleTypes();
         if (responseType != null)
         {
-            _types = responseType;
+            _types = responseType.ToList();
         }
     }
 
@@ -112,7 +112,7 @@
     private async Task ShowUpdate(int typeId)
     {
         forAdd = false;
-        var response = await Http.GetFromJsonAsync<BicycleType>($"{typeUrl}/{typeId}");
+        var response = await wrapper.GetBicycleType(typeId);
         if (response != null)
         {
             newType = response;
@@ -142,14 +142,14 @@
 
     private async Task AddNewItem()
     {
-        await Http.PostAsJsonAsync<BicycleType>(typeUrl, newType);
+        await wrapper.CreateBicycleType(newType);
         await LoadTypes();
         await modalRef!.Hide();
     }
 
     private async Task UpdateItem()
     {
-        await Http.PutAsJsonAsync($"{typeUrl}/{newType.TypeId}", newType);
+        await wrapper.UpdateBicycleType(newType.TypeId, newType);
 
         newType = new()
             {
@@ -163,7 +163,7 @@
 
     private async Task DeleteItem(int typeId)
     {
-        await Http.DeleteAsync($"{typeUrl}/{typeId}");
+        await wrapper.DeleteBicycleType(typeId);
         await LoadTypes();
     }
 }

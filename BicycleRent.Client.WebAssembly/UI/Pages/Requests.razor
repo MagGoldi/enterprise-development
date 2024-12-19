@@ -1,6 +1,6 @@
 ﻿@page "/requests"
 @using System.Globalization;
-@inject HttpClient Http
+@inject IBicycleRentApiWrapper wrapper;
 
 <PageTitle>Requests</PageTitle>
 
@@ -279,10 +279,10 @@
 
 
 @code {
-    private List<Rent> _rents = new();
-    private List<BicycleRenter> _renters = new();
-    private List<Bicycle> _bikes = new();
-    private List<BicycleType> _types = new();
+    private List<RentDto> _rents = new();
+    private List<BicycleRenterDto> _renters = new();
+    private List<BicycleDto> _bikes = new();
+    private List<BicycleTypeDto> _types = new();
 
     private string rentUrl = "api/RentDb";
     private string renterUrl = "api/BicycleRenterDb";
@@ -294,46 +294,46 @@
 
     private List<BicycleDto> query1 = null!;
     private List<BicycleRenterDto> query2 = null!;
-    private List<NumberAndEntity<double, BicycleTypeDto>> query3 = null!;
-    private List<NumberAndEntity<int, BicycleRenterDto>> query4 = null!;
-    private List<NumberAndEntity<int, BicycleDto>> query5 = null!;
+    private List<DoubleBicycleTypeDtoNumberAndEntity> query3 = null!;
+    private List<Int32BicycleRenterDtoNumberAndEntity> query4 = null!;
+    private List<Int32BicycleDtoNumberAndEntity> query5 = null!;
     private List<double> query6 = null!;
 
 
 
     private async Task LoadTypes()
     {
-        var responseType = await Http.GetFromJsonAsync<List<BicycleType>>(typeUrl);
+        var responseType = await wrapper.GetAllBicycleTypes();
         if (responseType != null)
         {
-            _types = responseType;
+            _types = responseType.ToList();
         }
     }
 
     private async Task LoadRents()
     {
-        var responseRent = await Http.GetFromJsonAsync<List<Rent>>(rentUrl);
+        var responseRent = await wrapper.GetAllRents();
         if (responseRent != null)
         {
-            _rents = responseRent;
+            _rents = responseRent.ToList();
         }
     }
 
     private async Task LoadRenters()
     {
-        var responseRenter = await Http.GetFromJsonAsync<List<BicycleRenter>>(renterUrl);
+        var responseRenter = await wrapper.GetAllBicycleRenters();
         if (responseRenter != null)
         {
-            _renters = responseRenter;
+            _renters = responseRenter.ToList();
         }
     }
 
     private async Task LoadBikes()
     {
-        var responseBike = await Http.GetFromJsonAsync<List<Bicycle>>(bikeUrl);
+        var responseBike = await wrapper.GetAllBicycles();
         if (responseBike != null)
         {
-            _bikes = responseBike;
+            _bikes = responseBike.ToList();
         }
     }
 
@@ -350,45 +350,45 @@
         switch (taskId)
         {
             case 1:
-                var response1 = await Http.GetFromJsonAsync<List<BicycleDto>>("api/JobRequestsDb/GetInfoSportBike?departure");
+                var response1 = await wrapper.InfoSportBike();
                 if (response1 != null)
                 {
-                    query1 = response1;
+                    query1 = response1.ToList();
                 }
                 break;
             case 2:
-                var response2 = await Http.GetFromJsonAsync<List<BicycleRenterDto>>("api/JobRequestsDb/GetInfoClientMountain");
+                var response2 = await wrapper.InfoClientMountain();
                 if (response2 != null)
                 {
-                    query2 = response2;
+                    query2 = response2.ToList();
                 }
                 break;
             case 3:
-                var response3 = await Http.GetFromJsonAsync<List<NumberAndEntity<double, BicycleTypeDto>>>("api/JobRequestsDb/GetSumTimeRentForType");
+                var response3 = await wrapper.SumTimeRentForType();
                 if (response3 != null)
                 {
-                    query3 = response3;
+                    query3 = response3.ToList();
                 }
                 break;
             case 4:
-                var response4 = await Http.GetFromJsonAsync<List<NumberAndEntity<int, BicycleRenterDto>>>("api/JobRequestsDb/GetClientsMaxRent");
+                var response4 = await wrapper.ClientsMaxRent();
                 if (response4 != null)
                 {
-                    query4 = response4;
+                    query4 = response4.ToList();
                 }
                 break;
             case 5:
-                var response5 = await Http.GetFromJsonAsync<List<NumberAndEntity<int, BicycleDto>>>("api/JobRequestsDb/GetTopRentBikes");
+                var response5 = await wrapper.TopRentBikes();
                 if (response5 != null)
                 {
-                    query5 = response5;
+                    query5 = response5.ToList();
                 }
                 break;
             case 6:
-                var response6 = await Http.GetFromJsonAsync<List<double>>("api/JobRequestsDb/GetStatisticTimeRent");
+                var response6 = await wrapper.StatisticTimeRent();
                 if (response6 != null)
                 {
-                    query6 = response6;
+                    query6 = response6.ToList();
                 }
                 break;
         }

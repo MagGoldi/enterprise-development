@@ -1,6 +1,6 @@
 ﻿@page "/rents"
 @using System.Globalization;
-@inject HttpClient Http
+@inject IBicycleRentApiWrapper wrapper;
 
 <PageTitle>Rents</PageTitle>
 
@@ -33,7 +33,7 @@
                 <td>@GetBikeSerialNumber(@rent.BicycleId)</td>
                 <td>@rent.TimeStart</td>
                 <td>@rent.TimeEnd</td>
-                <td>@rent.TimeRent</td>
+                <td>@rent.TimeEnd.Subtract(rent.TimeStart)</td>
                 <td>
                     <Button Color="Blazorise.Color.Primary"
                             class="edit-item"
@@ -108,18 +108,16 @@
 
 
 @code {
-    private List<Rent> _rents = new();
-    private List<BicycleRenter> _renters = new();
-    private List<Bicycle> _bikes = new();
-    private List<BicycleType> _types = new();
+    private List<RentDto> _rents = new();
+    private List<BicycleRenterDto> _renters = new();
+    private List<BicycleDto> _bikes = new();
+    private List<BicycleTypeDto> _types = new();
 
     private Modal? modalRef = null!;
-    private Rent newRent = new()
+    private RentDto newRent = new()
         {
             RentId = 0,
-            Renter = null,
             RenterId = 0,
-            Bicycle = null,
             BicycleId = 0,
             TimeStart = DateTime.Now,
             TimeEnd = DateTime.Now
@@ -133,37 +131,37 @@
 
     private async Task LoadTypes()
     {
-        var responseType = await Http.GetFromJsonAsync<List<BicycleType>>(typeUrl);
+        var responseType = await wrapper.GetAllBicycleTypes();
         if (responseType != null)
         {
-            _types = responseType;
+            _types = responseType.ToList();
         }
     }
 
     private async Task LoadRents()
     {
-        var responseRent = await Http.GetFromJsonAsync<List<Rent>>(rentUrl);
+        var responseRent = await wrapper.GetAllRents();
         if (responseRent != null)
         {
-            _rents = responseRent;
+            _rents = responseRent.ToList();
         }
     }
 
     private async Task LoadRenters()
     {
-        var responseRenter = await Http.GetFromJsonAsync<List<BicycleRenter>>(renterUrl);
+        var responseRenter = await wrapper.GetAllBicycleRenters();
         if (responseRenter != null)
         {
-            _renters = responseRenter;
+            _renters = responseRenter.ToList();
         }
     }
 
     private async Task LoadBikes()
     {
-        var responseBike = await Http.GetFromJsonAsync<List<Bicycle>>(bikeUrl);
+        var responseBike = await wrapper.GetAllBicycles();
         if (responseBike != null)
         {
-            _bikes = responseBike;
+            _bikes = responseBike.ToList();
         }
     }
 
@@ -178,7 +176,7 @@
     private async Task ShowUpdate(int rentId)
     {
         forAdd = false;
-        var response = await Http.GetFromJsonAsync<Rent>($"{rentUrl}/{rentId}");
+        var response = await wrapper.GetRent(rentId);
         if (response != null)
         {
             newRent = response;
@@ -192,9 +190,7 @@
         newRent = new()
             {
                 RentId = 0,
-                Renter = null,
                 RenterId = 0,
-                Bicycle = null,
                 BicycleId = 0,
                 TimeStart = DateTime.Now,
                 TimeEnd = DateTime.Now
@@ -212,21 +208,19 @@
 
     private async Task AddNewItem()
     {
-        await Http.PostAsJsonAsync<Rent>(rentUrl, newRent);
+        await wrapper.CreateRent(newRent);
         await LoadRents();
         await modalRef!.Hide();
     }
 
     private async Task UpdateItem()
     {
-        await Http.PutAsJsonAsync($"{rentUrl}/{newRent.RentId}", newRent);
+        await wrapper.UpdateRent(newRent.RentId, newRent);
 
         newRent = new()
             {
                 RentId = 0,
-                Renter = null,
                 RenterId = 0,
-                Bicycle = null,
                 BicycleId = 0,
                 TimeStart = DateTime.Now,
                 TimeEnd = DateTime.Now
@@ -237,7 +231,7 @@
 
     private async Task DeleteItem(int rentId)
     {
-        await Http.DeleteAsync($"{rentUrl}/{rentId}");
+        await wrapper.DeleteRent(rentId);
         await LoadRents();
     }
 
