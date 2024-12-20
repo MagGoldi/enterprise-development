@@ -24,16 +24,16 @@ public interface IBicycleRentApiWrapper
     Task<RentDto> GetRent(int id);
 
 
-    Task<IEnumerable<BicycleDto>> GetAllBicycles();
-    Task<IEnumerable<BicycleTypeDto>> GetAllBicycleTypes();
-    Task<IEnumerable<BicycleRenterDto>> GetAllBicycleRenters();
-    Task<IEnumerable<RentDto>> GetAllRents();
+    Task<ICollection<BicycleDto>> GetAllBicycles();
+    Task<ICollection<BicycleTypeDto>> GetAllBicycleTypes();
+    Task<ICollection<BicycleRenterDto>> GetAllBicycleRenters();
+    Task<ICollection<RentDto>> GetAllRents();
 
 
-    Task<IEnumerable<BicycleDto>> InfoSportBike();
-    Task<IEnumerable<BicycleRenterDto>> InfoClientMountain();
-    Task<IEnumerable<DoubleBicycleTypeDtoNumberAndEntity>> SumTimeRentForType();
-    Task<IEnumerable<Int32BicycleRenterDtoNumberAndEntity>> ClientsMaxRent();
-    Task<IEnumerable<Int32BicycleDtoNumberAndEntity>> TopRentBikes();
-    Task<IEnumerable<double>> StatisticTimeRent();
+    Task<ICollection<BicycleDto>> InfoSportBike();
+    Task<ICollection<BicycleRenterDto>> InfoClientMountain();
+    Task<ICollection<DoubleBicycleTypeDtoNumberAndEntity>> SumTimeRentForType();
+    Task<ICollection<Int32BicycleRenterDtoNumberAndEntity>> ClientsMaxRent();
+    Task<ICollection<Int32BicycleDtoNumberAndEntity>> TopRentBikes();
+    Task<ICollection<double>> StatisticTimeRent();
 }

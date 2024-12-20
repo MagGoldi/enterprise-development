@@ -26,16 +26,16 @@ public class BicycleRentApiWrapper(IConfiguration configuration): IBicycleRentAp
     public async Task<RentDto> GetRent(int id) => await _client.RentDbGETAsync(id);
 
 
-    public async Task<IEnumerable<BicycleDto>> GetAllBicycles() => await _client.BicycleDbAllAsync();
-    public async Task<IEnumerable<BicycleTypeDto>> GetAllBicycleTypes() => await _client.BicycleTypeDbAllAsync();
-    public async Task<IEnumerable<BicycleRenterDto>> GetAllBicycleRenters() => await _client.BicycleRenterDbAllAsync();
-    public async Task<IEnumerable<RentDto>> GetAllRents() => await _client.RentDbAllAsync();
+    public async Task<ICollection<BicycleDto>> GetAllBicycles() => await _client.BicycleDbAllAsync();
+    public async Task<ICollection<BicycleTypeDto>> GetAllBicycleTypes() => await _client.BicycleTypeDbAllAsync();
+    public async Task<ICollection<BicycleRenterDto>> GetAllBicycleRenters() => await _client.BicycleRenterDbAllAsync();
+    public async Task<ICollection<RentDto>> GetAllRents() => await _client.RentDbAllAsync();
 
 
-    public async Task<IEnumerable<BicycleDto>> InfoSportBike() => await _client.GetInfoSportBikeAsync();
-    public async Task<IEnumerable<BicycleRenterDto>> InfoClientMountain() => await _client.GetInfoClientMountainAsync();
-    public async Task<IEnumerable<DoubleBicycleTypeDtoNumberAndEntity>> SumTimeRentForType() => await _client.GetSumTimeRentForTypeAsync();
-    public async Task<IEnumerable<Int32BicycleRenterDtoNumberAndEntity>> ClientsMaxRent() => await _client.GetClientsMaxRentAsync();
-    public async Task<IEnumerable<Int32BicycleDtoNumberAndEntity>> TopRentBikes() => await _client.GetTopRentBikesAsync();
-    public async Task<IEnumerable<double>> StatisticTimeRent() => await _client.GetStatisticTimeRentAsync();
+    public async Task<ICollection<BicycleDto>> InfoSportBike() => await _client.GetInfoSportBikeAsync();
+    public async Task<ICollection<BicycleRenterDto>> InfoClientMountain() => await _client.GetInfoClientMountainAsync();
+    public async Task<ICollection<DoubleBicycleTypeDtoNumberAndEntity>> SumTimeRentForType() => await _client.GetSumTimeRentForTypeAsync();
+    public async Task<ICollection<Int32BicycleRenterDtoNumberAndEntity>> ClientsMaxRent() => await _client.GetClientsMaxRentAsync();
+    public async Task<ICollection<Int32BicycleDtoNumberAndEntity>> TopRentBikes() => await _client.GetTopRentBikesAsync();
+    public async Task<ICollection<double>> StatisticTimeRent() => await _client.GetStatisticTimeRentAsync();
 }
