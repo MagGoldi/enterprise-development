@@ -66,11 +66,11 @@
             <div class="mb-3">
                 <p>Дата рождения</p>
                 <label for="year">Год</label>
-                <input type="int" id="year" @bind="newRenter.BirthDate.Year" class="form-control" />
-                <label for="month">Месяц</label>
+                <InputDate id="birthDate" class="form-control" @bind-Value="newRenter.BirthDate" />
+@*                 <label for="month">Месяц</label>
                 <input type="int" id="month" @bind="newRenter.BirthDate.Month" class="form-control" />
                 <label for="day">День</label>
-                <input type="int" id="day" @bind="newRenter.BirthDate.Day" class="form-control" />
+                <input type="int" id="day" @bind="newRenter.BirthDate.day" class="form-control" /> *@
             </div>
             <div class="mb-3">
                 <label for="phoneNumber">Номер телефона</label>
@@ -99,7 +99,7 @@
         {
             RenterId = 0,
             FullName = "N000",
-            BirthDate = new WebAssembly.DateOnly { Year = 1990, Month = 1, Day = 1 },
+            BirthDate = new DateTimeOffset(),
             PhoneNumber = ""
         };
     private bool forAdd = true;
@@ -139,7 +139,7 @@
             {
                 RenterId = 0,
                 FullName = "N000",
-                BirthDate = new WebAssembly.DateOnly { Year = 1990, Month = 1, Day = 1 },
+                BirthDate = new DateTimeOffset(),
                 PhoneNumber = ""
             };
         await LoadRenters();
@@ -168,7 +168,7 @@
             {
                 RenterId = 0,
                 FullName = "N000",
-                BirthDate = new WebAssembly.DateOnly { Year = 1990, Month = 1, Day = 1 },
+                BirthDate = new DateTimeOffset(),
                 PhoneNumber = ""
             };
         await LoadRenters();

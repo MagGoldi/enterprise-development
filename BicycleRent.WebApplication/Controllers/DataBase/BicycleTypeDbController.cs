@@ -36,7 +36,7 @@ public class BicycleTypeDbController(IRepositoryDb<BicycleType, int> repository,
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet("{id}")]
-    public async Task<ActionResult<BicycleType>> Get(int id)
+    public async Task<ActionResult<BicycleTypeDto>> Get(int id)
     {
         var type = await repository.GetItem(id);
 

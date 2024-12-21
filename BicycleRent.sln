@@ -14,7 +14,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BicycleRent.Servicies", "Bi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BicycleRent.WebApplication", "BicycleRent.WebApplication\BicycleRent.WebApplication.csproj", "{1BC126C6-BF2A-4CA1-8A68-1060B189C136}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BicycleRent.Client.WebAssembly", "BicycleRent.Client.WebAssembly\BicycleRent.Client.WebAssembly.csproj", "{CDD17742-2A2B-471B-BA6D-06100D5F393C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BicycleRent.Client.WebAssembly", "BicycleRent.Client.WebAssembly\BicycleRent.Client.WebAssembly.csproj", "{7DE937C4-0938-4BFC-8ADB-7131CB8AE93D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +38,10 @@ Global
 		{1BC126C6-BF2A-4CA1-8A68-1060B189C136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC126C6-BF2A-4CA1-8A68-1060B189C136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC126C6-BF2A-4CA1-8A68-1060B189C136}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CDD17742-2A2B-471B-BA6D-06100D5F393C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDD17742-2A2B-471B-BA6D-06100D5F393C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDD17742-2A2B-471B-BA6D-06100D5F393C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDD17742-2A2B-471B-BA6D-06100D5F393C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE937C4-0938-4BFC-8ADB-7131CB8AE93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE937C4-0938-4BFC-8ADB-7131CB8AE93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE937C4-0938-4BFC-8ADB-7131CB8AE93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE937C4-0938-4BFC-8ADB-7131CB8AE93D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

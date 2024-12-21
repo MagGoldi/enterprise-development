@@ -10,7 +10,7 @@
         "tags": [
           "BicycleDb"
         ],
-        "summary": "Получить все велосипеды",
+        "summary": "РџРѕР»СѓС‡РёС‚СЊ РІСЃРµ РІРµР»РѕСЃРёРїРµРґС‹",
         "responses": {
           "200": {
             "description": "Success",
@@ -47,7 +47,7 @@
         "tags": [
           "BicycleDb"
         ],
-        "summary": "Добавить велосипед",
+        "summary": "Р”РѕР±Р°РІРёС‚СЊ РІРµР»РѕСЃРёРїРµРґ",
         "requestBody": {
           "description": "",
           "content": {
@@ -80,7 +80,7 @@
         "tags": [
           "BicycleDb"
         ],
-        "summary": "Получить велосипед по id",
+        "summary": "РџРѕР»СѓС‡РёС‚СЊ РІРµР»РѕСЃРёРїРµРґ РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -120,7 +120,7 @@
         "tags": [
           "BicycleDb"
         ],
-        "summary": "Обновить велосипед по id",
+        "summary": "РћР±РЅРѕРІРёС‚СЊ РІРµР»РѕСЃРёРїРµРґ РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -163,7 +163,7 @@
         "tags": [
           "BicycleDb"
         ],
-        "summary": "Удалить велосипед по id",
+        "summary": "РЈРґР°Р»РёС‚СЊ РІРµР»РѕСЃРёРїРµРґ РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -188,7 +188,7 @@
         "tags": [
           "BicycleRenterDb"
         ],
-        "summary": "Получить всех арендаторов велосипедов",
+        "summary": "РџРѕР»СѓС‡РёС‚СЊ РІСЃРµС… Р°СЂРµРЅРґР°С‚РѕСЂРѕРІ РІРµР»РѕСЃРёРїРµРґРѕРІ",
         "responses": {
           "200": {
             "description": "Success",
@@ -225,7 +225,7 @@
         "tags": [
           "BicycleRenterDb"
         ],
-        "summary": "Добавить арендатора велосипеда",
+        "summary": "Р”РѕР±Р°РІРёС‚СЊ Р°СЂРµРЅРґР°С‚РѕСЂР° РІРµР»РѕСЃРёРїРµРґР°",
         "requestBody": {
           "description": "",
           "content": {
@@ -258,7 +258,7 @@
         "tags": [
           "BicycleRenterDb"
         ],
-        "summary": "Получить арендатора велосипеда по id",
+        "summary": "РџРѕР»СѓС‡РёС‚СЊ Р°СЂРµРЅРґР°С‚РѕСЂР° РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -298,7 +298,7 @@
         "tags": [
           "BicycleRenterDb"
         ],
-        "summary": "Обновить арендатора велосипеда по id",
+        "summary": "РћР±РЅРѕРІРёС‚СЊ Р°СЂРµРЅРґР°С‚РѕСЂР° РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -341,7 +341,7 @@
         "tags": [
           "BicycleRenterDb"
         ],
-        "summary": "Удалить арендатора велосипеда по id",
+        "summary": "РЈРґР°Р»РёС‚СЊ Р°СЂРµРЅРґР°С‚РѕСЂР° РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -366,7 +366,7 @@
         "tags": [
           "BicycleTypeDb"
         ],
-        "summary": "Получить все типы велосипедов",
+        "summary": "РџРѕР»СѓС‡РёС‚СЊ РІСЃРµ С‚РёРїС‹ РІРµР»РѕСЃРёРїРµРґРѕРІ",
         "responses": {
           "200": {
             "description": "Success",
@@ -403,7 +403,7 @@
         "tags": [
           "BicycleTypeDb"
         ],
-        "summary": "Добавить тип велосипеда",
+        "summary": "Р”РѕР±Р°РІРёС‚СЊ С‚РёРї РІРµР»РѕСЃРёРїРµРґР°",
         "requestBody": {
           "description": "",
           "content": {
@@ -436,7 +436,7 @@
         "tags": [
           "BicycleTypeDb"
         ],
-        "summary": "Получить тип велосипеда по id",
+        "summary": "РџРѕР»СѓС‡РёС‚СЊ С‚РёРї РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -455,17 +455,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BicycleType"
+                  "$ref": "#/components/schemas/BicycleTypeDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BicycleType"
+                  "$ref": "#/components/schemas/BicycleTypeDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BicycleType"
+                  "$ref": "#/components/schemas/BicycleTypeDto"
                 }
               }
             }
@@ -476,7 +476,7 @@
         "tags": [
           "BicycleTypeDb"
         ],
-        "summary": "Обновить тип велосипеда по id",
+        "summary": "РћР±РЅРѕРІРёС‚СЊ С‚РёРї РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -519,7 +519,7 @@
         "tags": [
           "BicycleTypeDb"
         ],
-        "summary": "Удалить тип велосипеда по id",
+        "summary": "РЈРґР°Р»РёС‚СЊ С‚РёРї РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -544,7 +544,7 @@
         "tags": [
           "JobRequestsDb"
         ],
-        "summary": "1) Вывести информацию обо всех спортивных велосипедах",
+        "summary": "1) Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ РѕР±Рѕ РІСЃРµС… СЃРїРѕСЂС‚РёРІРЅС‹С… РІРµР»РѕСЃРёРїРµРґР°С…",
         "responses": {
           "200": {
             "description": "Success",
@@ -583,7 +583,7 @@
         "tags": [
           "JobRequestsDb"
         ],
-        "summary": "2) Вывести информацию обо всех клиентах, которые брали в аренду горные велосипеды, \r\nупорядочить по ФИО.",
+        "summary": "2) Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ РѕР±Рѕ РІСЃРµС… РєР»РёРµРЅС‚Р°С…, РєРѕС‚РѕСЂС‹Рµ Р±СЂР°Р»Рё РІ Р°СЂРµРЅРґСѓ РіРѕСЂРЅС‹Рµ РІРµР»РѕСЃРёРїРµРґС‹, \r\nСѓРїРѕСЂСЏРґРѕС‡РёС‚СЊ РїРѕ Р¤РРћ.",
         "responses": {
           "200": {
             "description": "Success",
@@ -622,7 +622,7 @@
         "tags": [
           "JobRequestsDb"
         ],
-        "summary": "3) Вывести суммарное время аренды велосипедов каждого типа.",
+        "summary": "3) Р’С‹РІРµСЃС‚Рё СЃСѓРјРјР°СЂРЅРѕРµ РІСЂРµРјСЏ Р°СЂРµРЅРґС‹ РІРµР»РѕСЃРёРїРµРґРѕРІ РєР°Р¶РґРѕРіРѕ С‚РёРїР°.",
         "responses": {
           "200": {
             "description": "Success",
@@ -661,7 +661,7 @@
         "tags": [
           "JobRequestsDb"
         ],
-        "summary": "4) Вывести информацию о клиентах, бравших велосипеды на прокат больше всего раз.",
+        "summary": "4) Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РєР»РёРµРЅС‚Р°С…, Р±СЂР°РІС€РёС… РІРµР»РѕСЃРёРїРµРґС‹ РЅР° РїСЂРѕРєР°С‚ Р±РѕР»СЊС€Рµ РІСЃРµРіРѕ СЂР°Р·.",
         "responses": {
           "200": {
             "description": "Success",
@@ -700,7 +700,7 @@
         "tags": [
           "JobRequestsDb"
         ],
-        "summary": "5) Вывести информацию о топ 5 наиболее часто арендуемых велосипедов.",
+        "summary": "5) Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ С‚РѕРї 5 РЅР°РёР±РѕР»РµРµ С‡Р°СЃС‚Рѕ Р°СЂРµРЅРґСѓРµРјС‹С… РІРµР»РѕСЃРёРїРµРґРѕРІ.",
         "responses": {
           "200": {
             "description": "Success",
@@ -739,7 +739,7 @@
         "tags": [
           "JobRequestsDb"
         ],
-        "summary": "6) Вывести информацию о минимальном, максимальном и \r\nсреднем времени аренды велосипедов.",
+        "summary": "6) Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РјРёРЅРёРјР°Р»СЊРЅРѕРј, РјР°РєСЃРёРјР°Р»СЊРЅРѕРј Рё \r\nСЃСЂРµРґРЅРµРј РІСЂРµРјРµРЅРё Р°СЂРµРЅРґС‹ РІРµР»РѕСЃРёРїРµРґРѕРІ.",
         "responses": {
           "200": {
             "description": "Success",
@@ -781,7 +781,7 @@
         "tags": [
           "RentDb"
         ],
-        "summary": "Получить все арендны велосипедов",
+        "summary": "РџРѕР»СѓС‡РёС‚СЊ РІСЃРµ Р°СЂРµРЅРґРЅС‹ РІРµР»РѕСЃРёРїРµРґРѕРІ",
         "responses": {
           "200": {
             "description": "Success",
@@ -818,7 +818,7 @@
         "tags": [
           "RentDb"
         ],
-        "summary": "Добавить аренду велосипеда",
+        "summary": "Р”РѕР±Р°РІРёС‚СЊ Р°СЂРµРЅРґСѓ РІРµР»РѕСЃРёРїРµРґР°",
         "requestBody": {
           "description": "",
           "content": {
@@ -851,7 +851,7 @@
         "tags": [
           "RentDb"
         ],
-        "summary": "Получить аренду велосипеда по id",
+        "summary": "РџРѕР»СѓС‡РёС‚СЊ Р°СЂРµРЅРґСѓ РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -870,17 +870,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rent"
+                  "$ref": "#/components/schemas/RentDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rent"
+                  "$ref": "#/components/schemas/RentDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Rent"
+                  "$ref": "#/components/schemas/RentDto"
                 }
               }
             }
@@ -891,7 +891,7 @@
         "tags": [
           "RentDb"
         ],
-        "summary": "Обновить аренду велосипеда по id",
+        "summary": "РћР±РЅРѕРІРёС‚СЊ Р°СЂРµРЅРґСѓ РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -934,7 +934,7 @@
         "tags": [
           "RentDb"
         ],
-        "summary": "Удалить аренду велосипеда по id",
+        "summary": "РЈРґР°Р»РёС‚СЊ Р°СЂРµРЅРґСѓ РІРµР»РѕСЃРёРїРµРґР° РїРѕ id",
         "parameters": [
           {
             "name": "id",
@@ -957,35 +957,6 @@
   },
   "components": {
     "schemas": {
-      "Bicycle": {
-        "type": "object",
-        "properties": {
-          "bicycleId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "serialNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "type": {
-            "$ref": "#/components/schemas/BicycleType"
-          },
-          "typeId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "model": {
-            "type": "string",
-            "nullable": true
-          },
-          "color": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "BicycleDto": {
         "type": "object",
         "properties": {
@@ -1012,27 +983,6 @@
         },
         "additionalProperties": false
       },
-      "BicycleRenter": {
-        "type": "object",
-        "properties": {
-          "renterId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "fullName": {
-            "type": "string",
-            "nullable": true
-          },
-          "birthDate": {
-            "$ref": "#/components/schemas/DateOnly"
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "BicycleRenterDto": {
         "type": "object",
         "properties": {
@@ -1045,29 +995,13 @@
             "nullable": true
           },
           "birthDate": {
-            "$ref": "#/components/schemas/DateOnly"
+            "type": "string",
+            "format": "date",
+            "nullable": true
           },
           "phoneNumber": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "BicycleType": {
-        "type": "object",
-        "properties": {
-          "typeId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
-          "price": {
-            "type": "number",
-            "format": "double"
           }
         },
         "additionalProperties": false
@@ -1089,50 +1023,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "DateOnly": {
-        "type": "object",
-        "properties": {
-          "year": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "month": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "day": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "dayOfWeek": {
-            "$ref": "#/components/schemas/DayOfWeek"
-          },
-          "dayOfYear": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "dayNumber": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "DayOfWeek": {
-        "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
-        "type": "integer",
-        "format": "int32"
       },
       "DoubleBicycleTypeDtoNumberAndEntity": {
         "type": "object",
@@ -1173,47 +1063,6 @@
         },
         "additionalProperties": false
       },
-      "Rent": {
-        "required": [
-          "bicycleId",
-          "renterId"
-        ],
-        "type": "object",
-        "properties": {
-          "rentId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "renter": {
-            "$ref": "#/components/schemas/BicycleRenter"
-          },
-          "renterId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "bicycle": {
-            "$ref": "#/components/schemas/Bicycle"
-          },
-          "bicycleId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "timeStart": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "timeEnd": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "timeRent": {
-            "$ref": "#/components/schemas/TimeSpan"
-          }
-        },
-        "additionalProperties": false
-      },
       "RentDto": {
         "type": "object",
         "properties": {
@@ -1236,86 +1085,6 @@
           "timeEnd": {
             "type": "string",
             "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "TimeSpan": {
-        "type": "object",
-        "properties": {
-          "ticks": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "days": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "hours": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "milliseconds": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "microseconds": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "nanoseconds": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "minutes": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "seconds": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "totalDays": {
-            "type": "number",
-            "format": "double",
-            "readOnly": true
-          },
-          "totalHours": {
-            "type": "number",
-            "format": "double",
-            "readOnly": true
-          },
-          "totalMilliseconds": {
-            "type": "number",
-            "format": "double",
-            "readOnly": true
-          },
-          "totalMicroseconds": {
-            "type": "number",
-            "format": "double",
-            "readOnly": true
-          },
-          "totalNanoseconds": {
-            "type": "number",
-            "format": "double",
-            "readOnly": true
-          },
-          "totalMinutes": {
-            "type": "number",
-            "format": "double",
-            "readOnly": true
-          },
-          "totalSeconds": {
-            "type": "number",
-            "format": "double",
-            "readOnly": true
           }
         },
         "additionalProperties": false

@@ -20,10 +20,12 @@ public  class BicycleRentDbContext(DbContextOptions<BicycleRentDbContext> option
         base.OnModelCreating(modelBuilder);
         var seeder = new BicycleRentDataSeeder();
 
+
         modelBuilder.Entity<BicycleRenter>().HasData(seeder.Renters);
         modelBuilder.Entity<Bicycle>().HasData(seeder.Bicycles);
         modelBuilder.Entity<BicycleType>().HasData(seeder.BicycleTypes);
         modelBuilder.Entity<Rent>().HasData(seeder.Rents);
+
 
         modelBuilder.Entity<Bicycle>(entity =>
             {

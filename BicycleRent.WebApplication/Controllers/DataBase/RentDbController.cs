@@ -41,7 +41,7 @@ public class RentDbController(IRepositoryDb<Rent, int> repository, IMapper mappe
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet("{id}")]
-    public async Task<ActionResult<Rent>> Get(int id)
+    public async Task<ActionResult<RentDto>> Get(int id)
     {
         var rent = await repository.GetItem(id);
 

@@ -12,15 +12,8 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowSpecific", policy =>
-    {
-        policy.WithOrigins("https://localhost:7026")
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-});
+
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy => { policy.AllowAnyOrigin(); policy.AllowAnyMethod(); policy.AllowAnyHeader(); }));
 
 
 builder.Services.AddEndpointsApiExplorer();
@@ -76,6 +69,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors();
 
 app.UseHttpsRedirection();
 

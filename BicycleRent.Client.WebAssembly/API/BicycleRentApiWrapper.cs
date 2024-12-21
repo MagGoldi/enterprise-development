@@ -2,7 +2,7 @@
 
 public class BicycleRentApiWrapper(IConfiguration configuration): IBicycleRentApiWrapper
 {
-    public readonly swaggerClient _client = new(configuration["OpenApi:ServerUrl"], new HttpClient());
+    public readonly BicycleRentApi _client = new(configuration["OpenApi:ServerUrl"], new HttpClient());
 
     public async Task CreateBicycle(BicycleDto newBicycle) => await _client.BicycleDbPOSTAsync(newBicycle);
     public async Task CreateBicycleType(BicycleTypeDto newType) => await _client.BicycleTypeDbPOSTAsync(newType);
